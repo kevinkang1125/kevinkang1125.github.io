@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 375" width="600" height="375" role="img" aria-label="Multi-Agent placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#134e4a"/><stop offset="1" stop-color="#0d9488"/>
+    </linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0v30" fill="none" stroke="#ffffff" stroke-opacity=".10" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="375" fill="url(#g)"/>
+  <rect width="600" height="375" fill="url(#grid)"/>
+  <g fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".85">
+    <path d="M180 120 320 85M320 85 430 170M430 170 390 268M390 268 250 225M250 225 180 120M250 225 430 170" stroke-opacity=".55"/>
+    <circle cx="180" cy="120" r="16" fill="#ffffff" fill-opacity=".9" stroke="none"/>
+    <circle cx="320" cy="85"  r="16" fill="#ffffff" fill-opacity=".9" stroke="none"/>
+    <circle cx="430" cy="170" r="16" fill="#ffffff" fill-opacity=".9" stroke="none"/>
+    <circle cx="250" cy="225" r="16" fill="#ffffff" fill-opacity=".9" stroke="none"/>
+    <circle cx="390" cy="268" r="16" fill="#ffffff" fill-opacity=".9" stroke="none"/>
+  </g>
+  <text x="300" y="46" fill="#ffffff" fill-opacity=".92" font-family="Inter,system-ui,sans-serif"
+        font-size="21" font-weight="600" text-anchor="middle">Multi-Agent</text>
+  <text x="300" y="68" fill="#ffffff" fill-opacity=".55" font-family="Inter,system-ui,sans-serif"
+        font-size="12" text-anchor="middle">replace with your figure</text>
+</svg>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qi Kang (Kevin) — Autonomous Driving Researcher</title>
+<meta name="description" content="Qi Kang (Kevin) is a Ph.D. candidate at Northeastern University and Graduate Research Assistant at MIT, working on end-to-end learning-based autonomous driving policies and safe reinforcement learning.">
+<meta name="author" content="Qi Kang">
+<link rel="canonical" href="https://kevinkang1125.github.io/">
+
+<!-- Social preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kevinkang1125.github.io/">
+<meta property="og:title" content="Qi Kang (Kevin) — Autonomous Driving Researcher">
+<meta property="og:description" content="Ph.D. candidate at Northeastern University, Graduate Research Assistant at MIT. End-to-end autonomous driving, safe reinforcement learning, high-confidence policy improvement.">
+<meta property="og:image" content="https://kevinkang1125.github.io/assets/photo.jpg">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     ALL PAGE CONTENT LIVES IN THIS ONE OBJECT.
+     Edit below, save, commit, push. Nothing else needs to change.
+     ═══════════════════════════════════════════════════════════════════════ -->
+<script>
+const DATA = {
+
+  /* ─── 1. WHO YOU ARE ─────────────────────────────────────────────── */
+  profile: {
+    name:    "Qi Kang",
+    nickname:"Kevin",
+    photo:   "assets/photo.jpg",
+    tagline: "Autonomous driving &middot; End-to-end driving policies &middot; Safe reinforcement learning",
+    roles: [
+      "Ph.D. Candidate, Civil &amp; Environmental Engineering, <strong>Northeastern University</strong>",
+      "Graduate Research Assistant, <strong>MIT</strong> JTL / Transit Lab"
+    ],
+    links: [
+      { label:"Email",          href:"mailto:kang.qi1@northeastern.edu",          icon:"mail"     },
+      { label:"CV",             href:"assets/Qi_Kang_CV.pdf",                    icon:"file"     },
+      { label:"Google Scholar", href:"https://scholar.google.com/",              icon:"scholar"  },
+      { label:"GitHub",         href:"https://github.com/kevinkang1125",         icon:"github"   },
+      { label:"LinkedIn",       href:"https://www.linkedin.com/",                icon:"linkedin" },
+      { label:"ORCID",          href:"https://orcid.org/0009-0004-1634-506X",    icon:"orcid"    }
+    ]
+  },
+
+  /* ─── 2. ABOUT ───────────────────────────────────────────────────── */
+  about: [
+    `I am an autonomous driving researcher working on <strong>end-to-end, learning-based driving
+     policies</strong>, with deep reinforcement learning as the methodological core. I am a Ph.D.
+     candidate at Northeastern University, co-advised by Prof.
+     <a href="https://coe.northeastern.edu/people/koutsopoulos-haris/">Haris N. Koutsopoulos</a> (NEU)
+     and Prof. <a href="https://dusp.mit.edu/people/jinhua-zhao">Jinhua Zhao</a> (MIT).`,
+
+    `My thesis develops <strong>novel policy-training strategies using high-confidence policy
+     improvement with formal performance guarantees</strong>, raising worst-case behavior under the
+     long-tail scenarios that dominate driving risk. I am also first author of
+     <strong>Drive2Survive</strong>, an in-preparation benchmark for evaluating end-to-end
+     autonomous driving policies.`,
+
+    `Before my Ph.D. I spent two years on industry AV research at <strong>Continental / AUMOVIO</strong>,
+     delivering a mid-to-end deep RL controller for safety-critical articulated-vehicle control
+     (IEEE ITSC paper, pending US patent) and large-scale autonomous fleet coordination. Earlier, I
+     led the full autonomous stack &mdash; LiDAR perception, planning and control &mdash; for a
+     national-award-winning Formula Student Autonomous team.`,
+
+    `I am Principal Investigator on an <strong>NSF NAIRR Pilot</strong> award for large-scale GPU
+     training, and my work appears in IEEE Transactions on Robotics, IEEE RA-L and IEEE ITSC.`
+  ],
+
+  /* ─── 3. NEWS  (newest first — edit freely) ──────────────────────── */
+  news: [
+    { date:"Aug 2025", text:`Awarded an <strong>NSF NAIRR Pilot</strong> allocation as <strong>Principal
+        Investigator</strong> &mdash; 4,000 GPU hours on the PSC Bridges-2 NVIDIA cluster.` },
+    { date:"2025",     text:`<em>R-FAC: Resilient Value Function Factorization for Multi-Robot Efficient
+        Search</em> published in <strong>IEEE Transactions on Robotics</strong>.` },
+    { date:"Sep 2024", text:`Presented <em>Deep Reinforcement Learning Based Tractor-Trailer Tracking
+        Control</em> at <strong>IEEE ITSC 2024</strong> in Edmonton, Canada.` },
+    { date:"Sep 2024", text:`Started my Ph.D. at <strong>Northeastern University</strong>, joining the
+        <strong>MIT JTL / Transit Lab</strong> as a Graduate Research Assistant.` },
+    { date:"Nov 2023", text:`Completed my M.Eng. (research) at the <strong>National University of
+        Singapore</strong>, Control &amp; Mechatronics Lab.` }
+  ],
+
+  /* ─── 4. EDUCATION ───────────────────────────────────────────────── */
+  education: [
+    {
+      school:"Northeastern University", location:"Boston, United States",
+      degree:"Ph.D. Candidate, Civil and Environmental Engineering",
+      dates:"Sep 2024 &ndash; Present",
+      notes:[
+        `Advised by Prof. <strong>Haris N. Koutsopoulos</strong> (NEU) and Prof.
+         <strong>Jinhua Zhao</strong> (MIT).`,
+        `Graduate Research Assistant at the <strong>MIT JTL / Transit Lab</strong>.`,
+        `<em>Focus:</em> end-to-end learning-based driving policies; safe reinforcement learning,
+         high-confidence policy improvement, and safety-critical decision-making for autonomous vehicles.`
+      ]
+    },
+    {
+      school:"National University of Singapore", location:"Singapore",
+      degree:"M.Eng. (Research), Department of Mechanical Engineering",
+      dates:"Jul 2021 &ndash; Nov 2023",
+      notes:[
+        `Advised by Assoc. Prof. <strong>Chew Chee-Meng</strong> in the Control and Mechatronics Lab.`,
+        `<em>Focus:</em> autonomous vehicle control, deep reinforcement learning, robotics and
+         multi-agent systems.`,
+        `Thesis: <em>Coordination and Optimization Strategies in Multiagent Systems &mdash; Exploring
+         Efficient Algorithms for Multi-Robot Patrolling and Resilient Search Problems.</em>`
+      ]
+    },
+    {
+      school:"Huazhong University of Science and Technology", location:"Wuhan, China",
+      degree:"B.Eng., Mechanical Design, Manufacture and Automation",
+      dates:"Sep 2017 &ndash; Jun 2021",
+      notes:[
+        `<strong>National Award</strong>, &ldquo;Aichi Cup&rdquo; Formula Student Autonomous China
+         (FSAC), Nov 2019.`,
+        `<strong>National Award of Excellence</strong>, Formula Student Combustion China (FSCC), Oct 2018.`,
+        `Thesis: <em>STM32-Based Brushless DC Motor Drive Board Design and Control Optimization.</em>`
+      ]
+    }
+  ],
+
+  /* ─── 5. PUBLICATIONS ────────────────────────────────────────────────
+     badge  : the pill shown on the thumbnail (venue + year)
+     img    : 16:10-ish teaser image, ~600x375px looks great
+     links  : [label, url] pairs — delete any you don't have yet
+     ─────────────────────────────────────────────────────────────────── */
+  publications: [
+    {
+      title:"Drive2Survive: A Benchmark for End-to-End Autonomous Driving Policies",
+      authors:"<strong>Q. Kang</strong>*, et al.",
+      venue:"Manuscript in preparation",
+      badge:"In prep", highlight:true,
+      img:"assets/pubs/drive2survive.svg",
+      blurb:"A unified evaluation protocol, task suite and metric set for comparing learned end-to-end driving policies on common ground.",
+      links:[]
+    },
+    {
+      title:"Hi-CoLA: High Confidence Lower Bound Approximation Based Reinforcement Learning for Flex-Route Transit Operation Control",
+      authors:"<strong>Q. Kang</strong>, H. Guo, H. N. Koutsopoulos*, J. Zhao",
+      venue:"Submitted to <em>IEEE Robotics and Automation Letters</em>",
+      badge:"Under review", highlight:true,
+      img:"assets/pubs/hicola.svg",
+      blurb:"A confidence-integrated safe RL framework giving formal performance guarantees and monotonic policy improvement from logged data.",
+      links:[]
+    },
+    {
+      title:"R-FAC: Resilient Value Function Factorization for Multi-Robot Efficient Search with Individual Failure Probabilities",
+      authors:"H. Guo*&dagger;, <strong>Q. Kang</strong>&dagger;, W.-Y. Yau, C.-M. Chew, D. Rus",
+      venue:"<em>IEEE Transactions on Robotics</em>, vol. 41, pp. 3385&ndash;3401, 2025",
+      badge:"T-RO 2025",
+      img:"assets/pubs/rfac.svg",
+      blurb:"A value-function-factorization paradigm for multi-robot efficient search that stays robust when individual agents can fail.",
+      links:[]   // TODO: paste real URL, e.g. links:[["IEEE","https://ieeexplore.ieee.org/document/..."],["PDF","..."]]
+    },
+    {
+      title:"Deep Reinforcement Learning Based Tractor-Trailer Tracking Control",
+      authors:"<strong>Q. Kang</strong>*, A. Hartmannsgruber, S.-H. Tan, X. Zhang, C.-M. Chew",
+      venue:"<em>IEEE 27th International Conference on Intelligent Transportation Systems (ITSC)</em>, Edmonton, Canada, 2024, pp. 3147&ndash;3153",
+      badge:"ITSC 2024",
+      img:"assets/pubs/tractor-trailer.svg",
+      blurb:"A mid-to-end deep RL policy unifying trajectory generation and tracking control for articulated vehicles under edge-case conditions.",
+      links:[]   // TODO: paste real URL
+    },
+    {
+      title:"EM-Patroller: Entropy Maximized Multi-Robot Patrolling With Steady State Distribution Approximation",
+      authors:"H. Guo*, <strong>Q. Kang</strong>, W.-Y. Yau, M. H. Ang, D. Rus",
+      venue:"<em>IEEE Robotics and Automation Letters</em>, vol. 8, no. 9, pp. 5712&ndash;5719, 2023",
+      badge:"RA-L 2023",
+      img:"assets/pubs/em-patroller.svg",
+      blurb:"An entropy-maximization patrolling algorithm using steady-state distribution approximation to produce unpredictable yet efficient routes.",
+      links:[]   // TODO: paste real URL
+    }
+  ],
+  pubNote:"* corresponding author &nbsp;&middot;&nbsp; &dagger; equal contribution",
+
+  /* ─── 6. PROJECTS ────────────────────────────────────────────────── */
+  projects: [
+    {
+      title:"Drive2Survive &mdash; Benchmarking End-to-End Driving Policies",
+      role:"Project Lead &middot; first author", org:"Northeastern University / MIT",
+      dates:"2025 &ndash; Present",
+      img:"assets/projects/drive2survive.svg",
+      bullets:[
+        "Leading the design of a benchmark for evaluating end-to-end autonomous driving policies.",
+        "Defining the evaluation protocol, task suite and metrics used to compare learned policies on common ground.",
+        "Benchmarking representative end-to-end driving baselines under a unified evaluation setup."
+      ],
+      tags:["End-to-end AD","Benchmarking","Closed-loop simulation"]
+    },
+    {
+      title:"Mid-to-End Deep RL Trajectory Generation &amp; Control for Articulated Vehicles",
+      role:"AI Function Engineer Intern", org:"Continental (now AUMOVIO), Singapore",
+      dates:"May 2022 &ndash; Apr 2023",
+      img:"assets/projects/tractor-trailer.svg",
+      bullets:[
+        "Developed a mid-to-end deep RL driving policy for an articulated tractor-trailer, unifying trajectory generation and tracking control in a single hybrid learned architecture.",
+        "Achieved safety-critical tracking control under extreme and edge-case driving conditions.",
+        "Built a custom 3D physics simulation environment (PyBullet / OpenAI Gym) for closed-loop policy training and evaluation.",
+        "Delivered one first-author IEEE ITSC paper and one pending US patent on vehicle motion control."
+      ],
+      tags:["Deep RL","Vehicle control","PyBullet","Patent"]
+    },
+    {
+      title:"Safe Reinforcement Learning with High-Confidence Performance Guarantees",
+      role:"Graduate Research Assistant &middot; NSF NAIRR PI", org:"MIT Transit Lab, United States",
+      dates:"Sep 2024 &ndash; Jan 2026",
+      img:"assets/projects/hicola.svg",
+      bullets:[
+        "Developed a safe RL training strategy: a confidence-integrated framework giving formal performance guarantees and monotonic policy improvement for driving and routing agents.",
+        "Designed a high-confidence lower bound approximation (Hi-CoLA) network as a surrogate reward model, enabling safe offline policy optimization from logged data without environment interaction.",
+        "Applied the framework to dynamic vehicle routing and fleet control, raising worst-case policy performance and mitigating the long-tail risk that dominates safety-critical autonomy.",
+        "Secured and led an NSF NAIRR Pilot award as PI, running large-scale training on 4,000 GPU hours of the PSC Bridges-2 NVIDIA cluster."
+      ],
+      tags:["Safe RL","Offline RL","Policy guarantees","Large-scale GPU training"]
+    },
+    {
+      title:"Large Fleet Rebalancing &amp; Human Driver Behavior Modeling",
+      role:"Research Engineer", org:"AUMOVIO&ndash;NTU Corp Lab, Singapore",
+      dates:"Aug 2023 &ndash; Aug 2024",
+      img:"assets/projects/fleet.svg",
+      bullets:[
+        "Developed an optimization-based solution for large-scale autonomous fleet rebalancing.",
+        "Extended the rebalancing model with multi-agent reinforcement learning for cooperative multi-vehicle coordination.",
+        "Modeled human driver behavior during vacant travel using machine learning on ride-hail operational data.",
+        "Optimized the rebalancing strategy through agent-level preference matching, aligning dispatch decisions with learned driver behavior."
+      ],
+      tags:["MARL","Fleet coordination","Behavior modeling"]
+    },
+    {
+      title:"Full-Stack Autonomous Driving System &mdash; Formula Student Autonomous",
+      role:"Leader &amp; Chief Designer, team of 60+ students", org:"HUST, Wuhan, China",
+      dates:"Jan 2019 &ndash; Jan 2020",
+      img:"assets/projects/fsac.svg",
+      bullets:[
+        "Won a <strong>National Award</strong> at Formula Student Autonomous China (FSAC) with a fully autonomous race car.",
+        "Designed the architecture of a complete autonomous driving stack: LiDAR-based point cloud processing for lane/track detection, heuristic trajectory planning, and PID-based motion stabilization."
+      ],
+      tags:["LiDAR perception","Motion planning","Real vehicle","National award"]
+    },
+    {
+      title:"Coordination and Optimization Strategies in Multiagent Systems",
+      role:"Research Student (M.Eng. final year project)", org:"A*STAR, Singapore",
+      dates:"Nov 2022 &ndash; Jun 2023",
+      img:"assets/projects/multiagent.svg",
+      bullets:[
+        "Developed efficient algorithms for two multi-agent coordination problems: multi-robot patrolling (MuRP) and multi-robot efficient search (MuRES).",
+        "Designed an entropy-maximization algorithm with steady-state distribution approximation for multi-robot patrolling (IEEE RA-L).",
+        "Proposed R-FAC, a resilient value-function-factorization paradigm robust to individual agent failure probabilities (IEEE T-RO).",
+        "Authored two journal papers on multi-agent coordination and fault-tolerant autonomy."
+      ],
+      tags:["Multi-agent RL","Robotics","2 journal papers"]
+    }
+  ],
+
+  /* ─── 7. EXPERIENCE ──────────────────────────────────────────────── */
+  experience: [
+    { role:"Research Engineer", org:"Continental&ndash;NTU Corp Lab (now AUMOVIO)",
+      location:"Singapore", dates:"Aug 2023 &ndash; Aug 2024" },
+    { role:"Research Assistant", org:"Agency for Science, Technology and Research (A*STAR)",
+      location:"Singapore", dates:"Nov 2022 &ndash; Jun 2023" },
+    { role:"AI Function Engineer Intern", org:"Continental Automotive (now AUMOVIO)",
+      location:"Singapore", dates:"May 2022 &ndash; Apr 2023" }
+  ],
+
+  /* ─── 8. AWARDS, FUNDING & PATENTS ───────────────────────────────── */
+  funding: [
+    { title:"NSF National AI Research Resource (NAIRR) Pilot Program",
+      role:"Principal Investigator", dates:"Aug 2025 &ndash; Nov 2025",
+      detail:`Project: <em>High-Confidence Lower Bound Approximation Based Performance Guaranteed
+              Reinforcement Learning</em>. Allocated 4,000 GPU hours on the PSC Bridges-2 NVIDIA
+              GPU cluster.` }
+  ],
+  patents: [
+    { text:`Q. Kang, A. Hartmannsgruber, S.-H. Tan, X. Zhang, &ldquo;Method and Data Processing Device
+            for Controlling Motion of a Vehicle,&rdquo; pending US patent application.` }
+  ],
+  awards: [
+    { text:`<strong>National Award</strong> &mdash; &ldquo;Aichi Cup&rdquo; Formula Student Autonomous
+            China (FSAC)`, date:"Nov 2019" },
+    { text:`<strong>National Award of Excellence</strong> &mdash; Formula Student Combustion China
+            (FSCC)`, date:"Oct 2018" }
+  ],
+
+  /* ─── 9. TALKS ───────────────────────────────────────────────────── */
+  talks: [
+    { title:"Deep Reinforcement Learning Based Tractor-Trailer Tracking Control",
+      venue:"27th IEEE Intelligent Transportation Systems Conference (ITSC)",
+      location:"Edmonton, Canada", date:"2024" },
+    { title:"EM-Patroller: Entropy Maximized Multi-Robot Patrolling With Steady State Distribution Approximation",
+      venue:"IEEE International Conference on Robotics and Automation (ICRA)",
+      location:"Yokohama, Japan", date:"2024" },
+    { title:"Coordination and Optimization Strategies in Multiagent Systems",
+      venue:"NUS College of Design and Engineering Graduate Seminar",
+      location:"Singapore", date:"2023" }
+  ],
+
+  /* ─── 10. SKILLS ─────────────────────────────────────────────────── */
+  skills: [
+    { group:"Research Interests", items:["End-to-end &amp; learning-based autonomous driving","Policy optimization and RL training strategies","Safe and trustworthy autonomy","Sequential decision-making under uncertainty","Vision-language-action (VLA) and foundation models for driving"] },
+    { group:"Autonomous Driving", items:["End-to-end / mid-to-end driving policies","Safety-critical vehicle control","AV benchmark design and policy evaluation","LiDAR perception and point cloud processing","Motion planning","Vehicle dynamics","Closed-loop simulation","Fleet-level coordination"] },
+    { group:"Machine Learning", items:["Deep reinforcement learning","Safe RL (high-confidence policy improvement, offline RL)","Multi-agent RL","Driver behavior modeling","VLA driving baseline reproduction","LLM post-training","Large-scale GPU cluster training"] },
+    { group:"Programming &amp; Tools", items:["Python","C++","PyTorch","Hugging Face Transformers","OpenAI Gym","PyBullet","Kubeflow","Git"] },
+    { group:"Outside research", items:["Scuba diving","Rock climbing","Golf","Tennis","Squash"] }
+  ],
+
+  footerNote:"Built as a single static page &middot; hosted on GitHub Pages"
+};
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Qi Kang",
+  "alternateName":"Kevin Kang",
+  "url":"https://kevinkang1125.github.io/",
+  "email":"kang.qi1@northeastern.edu",
+  "identifier":"https://orcid.org/0009-0004-1634-506X",
+  "jobTitle":"Ph.D. Candidate",
+  "affiliation":[
+    {"@type":"Organization","name":"Northeastern University"},
+    {"@type":"Organization","name":"Massachusetts Institute of Technology"}
+  ],
+  "alumniOf":[
+    {"@type":"Organization","name":"National University of Singapore"},
+    {"@type":"Organization","name":"Huazhong University of Science and Technology"}
+  ],
+  "knowsAbout":["Autonomous driving","Reinforcement learning","Robotics","Multi-agent systems"]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#about">Skip to content</a>
+
+<nav id="nav" aria-label="Section navigation">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Qi&nbsp;Kang</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#awards">Awards</a>
+      <a href="#skills">Skills</a>
+    </div>
+    <button id="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+  </div>
+</nav>
+
+<main id="top">
+
+  <header class="hero" id="about">
+    <img class="hero-photo" id="hero-photo" alt="Portrait of Qi Kang" width="180" height="180">
+    <div class="hero-text">
+      <h1 id="hero-name"></h1>
+      <p class="tagline" id="hero-tagline"></p>
+      <ul class="roles" id="hero-roles"></ul>
+      <div class="link-row" id="hero-links"></div>
+    </div>
+  </header>
+
+  <section class="bio" id="bio"></section>
+
+  <section id="news">
+    <h2>News</h2>
+    <ul class="news-list" id="news-list"></ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="timeline" id="education-list"></div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <p class="section-note" id="pub-note"></p>
+    <div class="cards" id="publication-list"></div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="cards" id="project-list"></div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul class="plain-list" id="experience-list"></ul>
+  </section>
+
+  <section id="awards">
+    <h2>Awards, Funding &amp; Patents</h2>
+    <h3>Funding</h3>
+    <ul class="plain-list" id="funding-list"></ul>
+    <h3>Patents</h3>
+    <ul class="plain-list" id="patent-list"></ul>
+    <h3>Honors</h3>
+    <ul class="plain-list" id="award-list"></ul>
+    <h3>Invited Talks &amp; Conference Presentations</h3>
+    <ul class="plain-list" id="talk-list"></ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills" id="skill-list"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p id="footer-note"></p>
+  <p class="footer-links" id="footer-links"></p>
+  <p class="updated">Last updated <span id="updated"></span></p>
+</footer>
+
+<script src="render.js"></script>
+</body>
+</html>
