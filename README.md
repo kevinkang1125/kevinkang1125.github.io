@@ -69,7 +69,7 @@ GitHub Pages redeploys automatically, usually within a minute.
 
 ## TODO before going live
 
-- [ ] Add `assets/photo.jpg` (square, ~600×600). Until then the page shows a "QK" monogram.
+- [x] ~~Add `assets/photo.jpg`~~ — done (cropped from `IMG_8145.JPG`, 600×600).
 - [ ] Add `assets/Qi_Kang_CV.pdf` so the **CV** button works.
 - [ ] Replace the placeholder Google Scholar and LinkedIn URLs in `DATA.profile.links`.
 - [ ] Paste real paper URLs into the `links: []` arrays (search for `TODO` in `index.html`).

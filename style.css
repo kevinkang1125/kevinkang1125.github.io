@@ -190,35 +190,44 @@ h1 .nick { color: var(--text-mute); font-weight: 400; }
 .news-text { color: var(--text-soft); }
 .news-text strong { color: var(--text); font-weight: 600; }
 
-/* ── Education timeline ─────────────────────────────────────────────────── */
-.timeline { position: relative; padding-left: 1.6rem; }
-.timeline::before {
-  content: ""; position: absolute; left: 4px; top: .5rem; bottom: .5rem;
-  width: 2px; background: var(--line);
+/* ── Education (HugoBlox "About Me" style) ──────────────────────────────── */
+.edu-list { display: flex; flex-direction: column; gap: 1.7rem; }
+
+.edu-item {
+  display: grid; grid-template-columns: 24px 1fr; gap: .95rem;
+  align-items: start;
 }
-.tl-item { position: relative; padding-bottom: 2rem; }
-.tl-item:last-child { padding-bottom: 0; }
-.tl-marker {
-  position: absolute; left: -1.6rem; top: .45rem;
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--bg); border: 2px solid var(--accent);
+.edu-icon {
+  width: 22px; height: 22px; margin-top: .2rem;
+  color: var(--text-mute); flex-shrink: 0;
 }
-.tl-head {
+
+.edu-head {
   display: flex; flex-wrap: wrap; align-items: baseline;
-  gap: .3rem 1rem; margin-bottom: .2rem;
+  gap: .2rem 1rem;
 }
-.tl-head h3 { margin: 0; font-size: 1.08rem; font-weight: 600; }
-.tl-dates {
+/* Degree is the primary line; institution sits beneath it. */
+.edu-degree {
+  margin: 0; font-size: 1.04rem; font-weight: 600;
+  letter-spacing: -.005em; line-height: 1.35;
+}
+.edu-dates {
   margin-left: auto; color: var(--text-mute);
   font-size: .82rem; font-variant-numeric: tabular-nums; white-space: nowrap;
 }
-.tl-degree { margin: 0; color: var(--accent); font-size: .92rem; font-weight: 500; }
-.tl-where  { margin: .1rem 0 0; color: var(--text-mute); font-size: .84rem; }
-.tl-notes  { margin: .7rem 0 0; padding-left: 1.1rem; }
-.tl-notes li {
-  color: var(--text-soft); font-size: .9rem; margin-bottom: .3rem;
+.edu-school {
+  margin: .1rem 0 0; color: var(--text-soft);
+  font-size: .93rem; font-weight: 500;
 }
-.tl-notes li::marker { color: var(--text-mute); }
+.edu-loc { color: var(--text-mute); font-weight: 400; }
+/* \00b7 is a CSS hex escape and the space that follows it is consumed as the
+   escape terminator, so the trailing gap must be an explicit nbsp (\00a0). */
+.edu-loc::before { content: " \00b7\00a0"; }
+
+.edu-notes { margin: .6rem 0 0; padding-left: 1.05rem; }
+.edu-notes li { color: var(--text-soft); font-size: .89rem; margin-bottom: .28rem; }
+.edu-notes li:last-child { margin-bottom: 0; }
+.edu-notes li::marker { color: var(--text-mute); }
 
 /* ── Cards (publications + projects) ────────────────────────────────────── */
 .cards { display: flex; flex-direction: column; gap: 1.1rem; }
@@ -317,7 +326,7 @@ footer p { margin: 0 0 .5rem; }
   .news-date { flex: none; }
   .row { flex-wrap: wrap; }
   .row-date { margin-left: 0; width: 100%; }
-  .tl-dates { margin-left: 0; width: 100%; }
+  .edu-dates { margin-left: 0; width: 100%; }
 }
 
 @media (max-width: 560px) {
@@ -330,7 +339,7 @@ footer p { margin: 0 0 .5rem; }
   #nav, #theme-toggle, .skip { display: none; }
   body { font-size: 10.5pt; color: #000; background: #fff; }
   section { padding: 1rem 0; break-inside: avoid; }
-  .card, .tl-item { break-inside: avoid; }
+  .card, .edu-item { break-inside: avoid; }
   .card:hover { transform: none; box-shadow: none; }
   a { color: #000; }
 }

@@ -53,19 +53,27 @@
     `<li><span class="news-date">${n.date}</span><span class="news-text">${n.text}</span></li>`
   ).join(""));
 
-  /* ── Education (standalone timeline) ─────────────────────────────────── */
+  /* ── Education ────────────────────────────────────────────────────────
+     HugoBlox "About Me" styling: graduation-cap icon, degree as the primary
+     line, institution as the lighter line beneath it.
+     ─────────────────────────────────────────────────────────────────────── */
+  const CAP = `<svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+       <path d="M12 3 2 8l10 5 10-5z"/>
+       <path d="M5 10.5V15c0 1.7 3.1 3 7 3s7-1.3 7-3v-4.5"/>
+       <path d="M21.4 9.3v4.4"/></svg>`;
+
   set("education-list", DATA.education.map((e) => `
-    <article class="tl-item">
-      <div class="tl-marker" aria-hidden="true"></div>
-      <div class="tl-body">
-        <div class="tl-head">
-          <h3>${e.school}</h3>
-          <span class="tl-dates">${e.dates}</span>
+    <article class="edu-item">
+      ${CAP}
+      <div class="edu-body">
+        <div class="edu-head">
+          <h3 class="edu-degree">${e.degree}</h3>
+          <span class="edu-dates">${e.dates}</span>
         </div>
-        <p class="tl-degree">${e.degree}</p>
-        <p class="tl-where">${e.location}</p>
+        <p class="edu-school">${e.school}<span class="edu-loc">${e.location}</span></p>
         ${e.notes && e.notes.length
-          ? `<ul class="tl-notes">${e.notes.map((n) => `<li>${n}</li>`).join("")}</ul>`
+          ? `<ul class="edu-notes">${e.notes.map((n) => `<li>${n}</li>`).join("")}</ul>`
           : ""}
       </div>
     </article>`).join(""));
