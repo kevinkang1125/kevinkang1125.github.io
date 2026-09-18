@@ -34,18 +34,18 @@ const DATA = {
     name:    "Qi Kang",
     nickname:"Kevin",
     photo:   "assets/photo.jpg",
-    tagline: "Autonomous driving &middot; End-to-end driving policies &middot; Safe reinforcement learning",
-    roles: [
-      "Ph.D. Candidate, Civil &amp; Environmental Engineering, <strong>Northeastern University</strong>",
-      "Graduate Research Assistant, <strong>MIT</strong> JTL / Transit Lab"
-    ],
+    title:   "Ph.D. Candidate, Civil &amp; Environmental Engineering",
+    org:     "Northeastern University",
+    org2:    "Graduate Research Assistant, MIT JTL / Transit Lab",
+    cv:      "assets/Qi_Kang_CV.pdf",
+    /* Icon-only row under the portrait. `label` becomes the tooltip and the
+       screen-reader name, so keep it accurate even though it isn't drawn. */
     links: [
-      { label:"Email",          href:"mailto:kang.qi1@northeastern.edu",          icon:"mail"     },
-      { label:"CV",             href:"assets/Qi_Kang_CV.pdf",                    icon:"file"     },
-      { label:"Google Scholar", href:"https://scholar.google.com/",              icon:"scholar"  },
-      { label:"GitHub",         href:"https://github.com/kevinkang1125",         icon:"github"   },
-      { label:"LinkedIn",       href:"https://www.linkedin.com/",                icon:"linkedin" },
-      { label:"ORCID",          href:"https://orcid.org/0009-0004-1634-506X",    icon:"orcid"    }
+      { label:"Email",          href:"mailto:kang.qi1@northeastern.edu",       icon:"mail"     },
+      { label:"Google Scholar", href:"https://scholar.google.com/",            icon:"scholar"  },
+      { label:"GitHub",         href:"https://github.com/kevinkang1125",       icon:"github"   },
+      { label:"LinkedIn",       href:"https://www.linkedin.com/",              icon:"linkedin" },
+      { label:"ORCID",          href:"https://orcid.org/0009-0004-1634-506X",  icon:"orcid"    }
     ]
   },
 
@@ -87,43 +87,23 @@ const DATA = {
         Singapore</strong>, Control &amp; Mechatronics Lab.` }
   ],
 
-  /* ─── 4. EDUCATION ───────────────────────────────────────────────── */
+  /* ─── 4. INTERESTS + EDUCATION  (the two columns in the intro) ───── */
+  interests: [
+    "End-to-end and learning-based autonomous driving",
+    "Policy optimization and RL training strategies",
+    "Safe and trustworthy autonomy",
+    "Sequential decision-making under uncertainty",
+    "Vision-language-action (VLA) and foundation models for driving"
+  ],
+
+  /* Degree, major and university only — the rest lives in the CV. */
   education: [
-    {
-      school:"Northeastern University", location:"Boston, United States",
-      degree:"Ph.D. Candidate, Civil and Environmental Engineering",
-      dates:"Sep 2024 &ndash; Present",
-      notes:[
-        `Advised by Prof. <strong>Haris N. Koutsopoulos</strong> (NEU) and Prof.
-         <strong>Jinhua Zhao</strong> (MIT).`,
-        `Graduate Research Assistant at the <strong>MIT JTL / Transit Lab</strong>.`,
-        `<em>Focus:</em> end-to-end learning-based driving policies; safe reinforcement learning,
-         high-confidence policy improvement, and safety-critical decision-making for autonomous vehicles.`
-      ]
-    },
-    {
-      school:"National University of Singapore", location:"Singapore",
-      degree:"M.Eng. (Research), Department of Mechanical Engineering",
-      dates:"Jul 2021 &ndash; Nov 2023",
-      notes:[
-        `Advised by Assoc. Prof. <strong>Chew Chee-Meng</strong> in the Control and Mechatronics Lab.`,
-        `<em>Focus:</em> autonomous vehicle control, deep reinforcement learning, robotics and
-         multi-agent systems.`,
-        `Thesis: <em>Coordination and Optimization Strategies in Multiagent Systems &mdash; Exploring
-         Efficient Algorithms for Multi-Robot Patrolling and Resilient Search Problems.</em>`
-      ]
-    },
-    {
-      school:"Huazhong University of Science and Technology", location:"Wuhan, China",
-      degree:"B.Eng., Mechanical Design, Manufacture and Automation",
-      dates:"Sep 2017 &ndash; Jun 2021",
-      notes:[
-        `<strong>National Award</strong>, &ldquo;Aichi Cup&rdquo; Formula Student Autonomous China
-         (FSAC), Nov 2019.`,
-        `<strong>National Award of Excellence</strong>, Formula Student Combustion China (FSCC), Oct 2018.`,
-        `Thesis: <em>STM32-Based Brushless DC Motor Drive Board Design and Control Optimization.</em>`
-      ]
-    }
+    { degree:"Ph.D. Civil and Environmental Engineering",
+      school:"Northeastern University" },
+    { degree:"M.Eng. (Research) Mechanical Engineering",
+      school:"National University of Singapore" },
+    { degree:"B.Eng. Mechanical Design, Manufacture and Automation",
+      school:"Huazhong University of Science and Technology" }
   ],
 
   /* ─── 5. RESEARCH  (publications and projects, merged) ──────────────
@@ -252,7 +232,6 @@ const DATA = {
 
   /* ─── 6. SKILLS ──────────────────────────────────────────────────── */
   skills: [
-    { group:"Research Interests", items:["End-to-end &amp; learning-based autonomous driving","Policy optimization and RL training strategies","Safe and trustworthy autonomy","Sequential decision-making under uncertainty","Vision-language-action (VLA) and foundation models for driving"] },
     { group:"Autonomous Driving", items:["End-to-end / mid-to-end driving policies","Safety-critical vehicle control","AV benchmark design and policy evaluation","LiDAR perception and point cloud processing","Motion planning","Vehicle dynamics","Closed-loop simulation","Fleet-level coordination"] },
     { group:"Machine Learning", items:["Deep reinforcement learning","Safe RL (high-confidence policy improvement, offline RL)","Multi-agent RL","Driver behavior modeling","VLA driving baseline reproduction","LLM post-training","Large-scale GPU cluster training"] },
     { group:"Programming &amp; Tools", items:["Python","C++","PyTorch","Hugging Face Transformers","OpenAI Gym","PyBullet","Kubeflow","Git"] },
@@ -295,7 +274,6 @@ const DATA = {
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#news">News</a>
-      <a href="#education">Education</a>
       <a href="#research">Research</a>
       <a href="#skills">Skills</a>
     </div>
@@ -305,26 +283,48 @@ const DATA = {
 
 <main id="top">
 
-  <header class="hero" id="about">
-    <img class="hero-photo" id="hero-photo" alt="Portrait of Qi Kang" width="180" height="180">
-    <div class="hero-text">
-      <h1 id="hero-name"></h1>
-      <p class="tagline" id="hero-tagline"></p>
-      <ul class="roles" id="hero-roles"></ul>
-      <div class="link-row" id="hero-links"></div>
-    </div>
-  </header>
+  <header class="intro" id="about">
 
-  <section class="bio" id="bio"></section>
+    <!-- left rail: portrait, name, title, university, icon links -->
+    <aside class="intro-side">
+      <img class="intro-photo" id="intro-photo" alt="Portrait of Qi Kang"
+           width="200" height="200">
+      <h1 id="intro-name"></h1>
+      <p class="intro-title" id="intro-title"></p>
+      <p class="intro-org"   id="intro-org"></p>
+      <p class="intro-org2"  id="intro-org2"></p>
+      <div class="icon-row" id="intro-links"></div>
+    </aside>
+
+    <!-- right column: about me, CV, then interests | education -->
+    <div class="intro-main">
+      <h2>About Me</h2>
+      <div class="intro-bio" id="intro-bio"></div>
+      <a class="btn-cv" id="intro-cv" href="#">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5M3.5 14.5v1a1.5 1.5 0 0 0 1.5 1.5h10a1.5 1.5 0 0 0 1.5-1.5v-1"/>
+        </svg>
+        <span>Download CV</span>
+      </a>
+
+      <div class="intro-cols">
+        <div class="intro-col">
+          <h3>Research Interests</h3>
+          <ul class="interest-list" id="interest-list"></ul>
+        </div>
+        <div class="intro-col">
+          <h3>Education</h3>
+          <div class="edu-list" id="education-list"></div>
+        </div>
+      </div>
+    </div>
+
+  </header>
 
   <section id="news">
     <h2>News</h2>
     <ul class="news-list" id="news-list"></ul>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <div class="edu-list" id="education-list"></div>
   </section>
 
   <section id="research">

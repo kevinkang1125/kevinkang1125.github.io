@@ -115,46 +115,106 @@ section > h3:first-of-type { margin-top: 0; }
 
 .section-note { color: var(--text-mute); font-size: .85rem; margin: -.9rem 0 1.3rem; }
 
-/* ── Hero ───────────────────────────────────────────────────────────────── */
-.hero {
-  display: flex; gap: 2.2rem; align-items: flex-start;
-  padding: 3.5rem 0 2rem;
+/* ── Intro card: portrait rail + about column ───────────────────────────── */
+.intro {
+  display: grid; grid-template-columns: 250px 1fr; gap: 2.8rem;
+  align-items: start;
+  margin: 2.5rem 0 0; padding: 2.2rem;
+  border: 1px solid var(--line); border-radius: 16px;
+  background: var(--bg-soft);
 }
-.hero-photo {
-  width: 180px; height: 180px; flex-shrink: 0;
+
+/* left rail */
+.intro-side { text-align: center; }
+.intro-photo {
+  width: 200px; height: 200px; margin: 0 auto .95rem;
   border-radius: 50%; object-fit: cover;
-  border: 1px solid var(--line); box-shadow: var(--shadow);
+  border: 3px solid var(--bg); box-shadow: var(--shadow);
 }
-.hero-photo--fallback {
+.intro-photo--fallback {
   display: grid; place-items: center;
   background: var(--accent-bg); color: var(--accent);
-  font: 600 3.2rem/1 var(--serif); letter-spacing: .02em;
+  font: 600 3.4rem/1 var(--serif);
 }
-.hero-text { min-width: 0; }
-
-h1 {
-  font-family: var(--serif); font-size: clamp(2.1rem, 5vw, 2.9rem);
-  font-weight: 600; letter-spacing: -.02em; line-height: 1.1;
-  margin: 0 0 .5rem;
+.intro-side h1 {
+  margin: 0 0 .3rem; font-family: var(--serif);
+  font-size: 1.55rem; font-weight: 600; letter-spacing: -.015em; line-height: 1.15;
 }
-h1 .nick { color: var(--text-mute); font-weight: 400; }
-
-.tagline { color: var(--accent); font-size: .95rem; font-weight: 500; margin: 0 0 1rem; }
-
-.roles { list-style: none; margin: 0 0 1.3rem; padding: 0; }
-.roles li {
-  color: var(--text-soft); font-size: .95rem; padding-left: 1.1rem; position: relative;
+.intro-side h1 .nick { color: var(--text-mute); font-weight: 400; }
+.intro-title {
+  margin: 0; font-size: .88rem; font-weight: 600; color: var(--text);
+  line-height: 1.4;
 }
-.roles li::before {
-  content: ""; position: absolute; left: 0; top: .62em;
-  width: 5px; height: 5px; border-radius: 50%; background: var(--text-mute);
+.intro-org  { margin: .15rem 0 0; font-size: .88rem; color: var(--text-soft); }
+.intro-org2 {
+  margin: .3rem 0 0; font-size: .78rem; color: var(--text-mute); line-height: 1.45;
 }
-.roles strong { color: var(--text); font-weight: 600; }
 
-/* ── Chips (contact links, paper links) ─────────────────────────────────── */
+/* icon-only social row */
+.icon-row {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: .45rem; margin-top: 1.1rem;
+}
+.icon-link {
+  display: grid; place-items: center; width: 34px; height: 34px;
+  border: 1px solid var(--line); border-radius: 9px;
+  background: var(--bg-card); color: var(--text-soft);
+  transition: color .15s, border-color .15s, background .15s;
+}
+.icon-link:hover {
+  color: var(--accent); border-color: var(--accent); background: var(--accent-bg);
+}
+.icon-link svg { width: 17px; height: 17px; }
+
+/* right column */
+.intro-main { min-width: 0; }
+.intro-main > h2 { margin: 0 0 1rem; }
+.intro-bio p { margin: 0 0 .9rem; color: var(--text-soft); }
+.intro-bio p:last-child { margin-bottom: 0; }
+.intro-bio strong { color: var(--text); font-weight: 600; }
+
+.btn-cv {
+  display: inline-flex; align-items: center; gap: .5rem;
+  margin-top: 1.3rem; padding: .6rem 1.15rem;
+  border-radius: 9px; border: 1px solid transparent;
+  background: var(--accent); color: #fff;
+  font-size: .88rem; font-weight: 600;
+  transition: filter .15s;
+}
+.btn-cv:hover { text-decoration: none; filter: brightness(1.1); }
+/* --accent lightens in dark mode, so white-on-accent loses contrast there. */
+html[data-theme="dark"] .btn-cv { color: #0e1014; }
+.btn-cv svg { width: 17px; height: 17px; }
+
+/* the two columns: interests | education */
+.intro-cols {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 2.2rem;
+  margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid var(--line);
+}
+.intro-col h3 {
+  margin: 0 0 .7rem; font-size: .8rem; font-weight: 600;
+  color: var(--accent); text-transform: uppercase; letter-spacing: .05em;
+}
+
+.interest-list { margin: 0; padding-left: 1.05rem; }
+.interest-list li {
+  color: var(--text-soft); font-size: .88rem; margin-bottom: .32rem; line-height: 1.5;
+}
+.interest-list li::marker { color: var(--text-mute); }
+
+/* ── Education (degree over university, graduation-cap icon) ────────────── */
+.edu-list { display: flex; flex-direction: column; gap: .85rem; }
+.edu-item { display: grid; grid-template-columns: 20px 1fr; gap: .7rem; align-items: start; }
+.edu-icon { width: 19px; height: 19px; margin-top: .12rem; color: var(--text-mute); }
+.edu-body { min-width: 0; }
+.edu-degree {
+  margin: 0; font-size: .88rem; font-weight: 600; line-height: 1.4; color: var(--text);
+}
+.edu-school { margin: .05rem 0 0; font-size: .82rem; color: var(--text-mute); line-height: 1.4; }
+
+/* ── Chips (link rows on research cards) ───────────────────────────────── */
 .link-row { display: flex; flex-wrap: wrap; gap: .5rem; }
 .link-row--sm { margin-top: .8rem; }
-
 .chip {
   display: inline-flex; align-items: center; gap: .4rem;
   padding: .42rem .8rem; border-radius: 8px;
@@ -169,12 +229,6 @@ h1 .nick { color: var(--text-mute); font-weight: 400; }
 .chip svg { width: 15px; height: 15px; flex-shrink: 0; }
 .chip--sm { padding: .28rem .6rem; font-size: .78rem; }
 
-/* ── Bio ────────────────────────────────────────────────────────────────── */
-.bio { padding-top: 0; }
-.bio p { margin: 0 0 1rem; color: var(--text-soft); }
-.bio p:last-child { margin-bottom: 0; }
-.bio strong { color: var(--text); font-weight: 600; }
-
 /* ── News ───────────────────────────────────────────────────────────────── */
 .news-list { list-style: none; margin: 0; padding: 0; }
 .news-list li {
@@ -188,45 +242,6 @@ h1 .nick { color: var(--text-mute); font-weight: 400; }
 }
 .news-text { color: var(--text-soft); }
 .news-text strong { color: var(--text); font-weight: 600; }
-
-/* ── Education (HugoBlox "About Me" style) ──────────────────────────────── */
-.edu-list { display: flex; flex-direction: column; gap: 1.7rem; }
-
-.edu-item {
-  display: grid; grid-template-columns: 24px 1fr; gap: .95rem;
-  align-items: start;
-}
-.edu-icon {
-  width: 22px; height: 22px; margin-top: .2rem;
-  color: var(--text-mute); flex-shrink: 0;
-}
-
-.edu-head {
-  display: flex; flex-wrap: wrap; align-items: baseline;
-  gap: .2rem 1rem;
-}
-/* Degree is the primary line; institution sits beneath it. */
-.edu-degree {
-  margin: 0; font-size: 1.04rem; font-weight: 600;
-  letter-spacing: -.005em; line-height: 1.35;
-}
-.edu-dates {
-  margin-left: auto; color: var(--text-mute);
-  font-size: .82rem; font-variant-numeric: tabular-nums; white-space: nowrap;
-}
-.edu-school {
-  margin: .1rem 0 0; color: var(--text-soft);
-  font-size: .93rem; font-weight: 500;
-}
-.edu-loc { color: var(--text-mute); font-weight: 400; }
-/* \00b7 is a CSS hex escape and the space that follows it is consumed as the
-   escape terminator, so the trailing gap must be an explicit nbsp (\00a0). */
-.edu-loc::before { content: " \00b7\00a0"; }
-
-.edu-notes { margin: .6rem 0 0; padding-left: 1.05rem; }
-.edu-notes li { color: var(--text-soft); font-size: .89rem; margin-bottom: .28rem; }
-.edu-notes li:last-child { margin-bottom: 0; }
-.edu-notes li::marker { color: var(--text-mute); }
 
 /* ── Cards (publications + projects) ────────────────────────────────────── */
 .cards { display: flex; flex-direction: column; gap: 1.1rem; }
@@ -300,14 +315,14 @@ footer p { margin: 0 0 .5rem; }
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 720px) {
   body { font-size: 16px; }
-  .hero { flex-direction: column; gap: 1.4rem; padding-top: 2.5rem; }
-  .hero-photo { width: 132px; height: 132px; }
-  .hero-photo--fallback { font-size: 2.4rem; }
+  .intro { grid-template-columns: 1fr; gap: 1.8rem; padding: 1.6rem; }
+  .intro-photo { width: 150px; height: 150px; }
+  .intro-photo--fallback { font-size: 2.6rem; }
   .card { grid-template-columns: 1fr; gap: 1rem; }
   .card-thumb { max-width: 340px; }
   .news-list li { flex-direction: column; gap: .2rem; }
   .news-date { flex: none; }
-  .edu-dates { margin-left: 0; width: 100%; }
+  .intro-cols { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
 @media (max-width: 560px) {
@@ -320,7 +335,7 @@ footer p { margin: 0 0 .5rem; }
   #nav, #theme-toggle, .skip { display: none; }
   body { font-size: 10.5pt; color: #000; background: #fff; }
   section { padding: 1rem 0; break-inside: avoid; }
-  .card, .edu-item { break-inside: avoid; }
+  .card, .edu-item, .intro { break-inside: avoid; }
   .card:hover { transform: none; box-shadow: none; }
   a { color: #000; }
 }

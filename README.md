@@ -19,13 +19,19 @@ Open `index.html`, scroll to the big `const DATA = { ... }` block. Every section
 page is a labelled key in there:
 
 ```
-profile    your name, photo, tagline, contact links
-about      the intro paragraphs
+profile    name, photo, title, university, CV path, icon links
+about      the "About Me" paragraphs
+interests  left column of the intro's lower half
+education  right column — degree + university only
 news       reverse-chronological updates
-education  the education list (grad-cap icon, degree over institution)
 research   publications AND projects, merged into one list
 skills     tag groups
 ```
+
+The intro is a single two-column card: portrait, name, title and icon links on
+the left; About Me, a Download CV button, then Research Interests | Education on
+the right. There is no separate Education section — it lives in that card, and
+carries degree + university only.
 
 The site is deliberately **not** a copy of the CV — no experience, awards,
 funding, patent or talks sections. That material lives in the PDF. Anything

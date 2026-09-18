@@ -27,36 +27,38 @@
   const attrs = (href) =>
     /^https?:/.test(href) ? ' target="_blank" rel="noopener noreferrer"' : "";
 
-  /* ── Profile ─────────────────────────────────────────────────────────── */
+  /* ── Intro: portrait rail + about/CV/interests/education ─────────────── */
   const p = DATA.profile;
-  const photo = $("hero-photo");
+
+  const photo = $("intro-photo");
   photo.src = p.photo;
   photo.onerror = () => {
-    /* graceful fallback: initials circle instead of a broken image */
+    /* graceful fallback: initials instead of a broken image */
     const d = document.createElement("div");
-    d.className = "hero-photo hero-photo--fallback";
+    d.className = "intro-photo intro-photo--fallback";
     d.textContent = p.name.split(/\s+/).map((w) => w[0]).join("");
     photo.replaceWith(d);
   };
 
-  set("hero-name", p.nickname ? `${p.name} <span class="nick">(${p.nickname})</span>` : p.name);
-  set("hero-tagline", p.tagline);
-  set("hero-roles", p.roles.map((r) => `<li>${r}</li>`).join(""));
-  set("hero-links", p.links.map((l) =>
-    `<a class="chip" href="${l.href}"${attrs(l.href)}>${icon(l.icon)}<span>${l.label}</span></a>`
+  set("intro-name",  p.nickname ? `${p.name} <span class="nick">(${p.nickname})</span>` : p.name);
+  set("intro-title", p.title || "");
+  set("intro-org",   p.org   || "");
+  set("intro-org2",  p.org2  || "");
+
+  /* Icon-only links — the label survives as tooltip + accessible name. */
+  set("intro-links", p.links.map((l) =>
+    `<a class="icon-link" href="${l.href}"${attrs(l.href)}
+        title="${l.label}" aria-label="${l.label}">${icon(l.icon)}</a>`
   ).join(""));
 
-  set("bio", DATA.about.map((par) => `<p>${par}</p>`).join(""));
+  set("intro-bio", DATA.about.map((par) => `<p>${par}</p>`).join(""));
 
-  /* ── News ────────────────────────────────────────────────────────────── */
-  set("news-list", DATA.news.map((n) =>
-    `<li><span class="news-date">${n.date}</span><span class="news-text">${n.text}</span></li>`
-  ).join(""));
+  const cv = $("intro-cv");
+  if (p.cv) cv.href = p.cv; else cv.remove();
 
-  /* ── Education ────────────────────────────────────────────────────────
-     HugoBlox "About Me" styling: graduation-cap icon, degree as the primary
-     line, institution as the lighter line beneath it.
-     ─────────────────────────────────────────────────────────────────────── */
+  set("interest-list", (DATA.interests || []).map((i) => `<li>${i}</li>`).join(""));
+
+  /* Education: degree as the primary line, university beneath it. */
   const CAP = `<svg class="edu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
        stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
        <path d="M12 3 2 8l10 5 10-5z"/>
@@ -64,19 +66,18 @@
        <path d="M21.4 9.3v4.4"/></svg>`;
 
   set("education-list", DATA.education.map((e) => `
-    <article class="edu-item">
+    <div class="edu-item">
       ${CAP}
       <div class="edu-body">
-        <div class="edu-head">
-          <h3 class="edu-degree">${e.degree}</h3>
-          <span class="edu-dates">${e.dates}</span>
-        </div>
-        <p class="edu-school">${e.school}<span class="edu-loc">${e.location}</span></p>
-        ${e.notes && e.notes.length
-          ? `<ul class="edu-notes">${e.notes.map((n) => `<li>${n}</li>`).join("")}</ul>`
-          : ""}
+        <p class="edu-degree">${e.degree}</p>
+        <p class="edu-school">${e.school}</p>
       </div>
-    </article>`).join(""));
+    </div>`).join(""));
+
+  /* ── News ────────────────────────────────────────────────────────────── */
+  set("news-list", DATA.news.map((n) =>
+    `<li><span class="news-date">${n.date}</span><span class="news-text">${n.text}</span></li>`
+  ).join(""));
 
   /* ── Research: publications and projects in one list ──────────────────
      Papers render authors + venue; project-only entries skip both and lean
