@@ -104,7 +104,8 @@ img { max-width: 100%; display: block; }
 main { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
 
 section { padding: 2.75rem 0; border-top: 1px solid var(--line); }
-section:first-of-type { border-top: 0; }
+/* The intro is a <header>, so the first <section> (News) keeps its rule
+   and provides the divider the intro panel used to give. */
 
 h2 {
   font-family: var(--serif); font-size: 1.6rem; font-weight: 600;
@@ -119,22 +120,21 @@ section > h3:first-of-type { margin-top: 0; }
 .intro {
   display: grid; grid-template-columns: 280px 1fr; gap: 3.2rem;
   align-items: start;
-  margin: 2.5rem 0 0; padding: 2.2rem;
-  border: 1px solid var(--line); border-radius: 16px;
-  background: var(--bg-soft);
+  padding: 3rem 0 3.25rem;
 }
 
 /* left rail */
 .intro-side { text-align: center; }
 .intro-photo {
-  width: 215px; height: 215px; margin: 0 auto .95rem;
-  border-radius: 50%; object-fit: cover;
-  border: 3px solid var(--bg); box-shadow: var(--shadow);
+  width: 100%; height: auto; aspect-ratio: 1 / 1;
+  margin: 0 0 1.15rem;
+  border-radius: 12px; object-fit: cover;
+  box-shadow: var(--shadow);
 }
 .intro-photo--fallback {
   display: grid; place-items: center;
   background: var(--accent-bg); color: var(--accent);
-  font: 600 3.4rem/1 var(--serif);
+  font: 600 4rem/1 var(--serif);
 }
 .intro-side h1 {
   margin: 0 0 .3rem; font-family: var(--serif);
@@ -315,9 +315,10 @@ footer p { margin: 0 0 .5rem; }
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 720px) {
   body { font-size: 16px; }
-  .intro { grid-template-columns: 1fr; gap: 1.8rem; padding: 1.6rem; }
-  .intro-photo { width: 150px; height: 150px; }
-  .intro-photo--fallback { font-size: 2.6rem; }
+  .intro { grid-template-columns: 1fr; gap: 1.8rem; padding: 2rem 0 2.25rem; }
+  /* stacked: stop the square from filling the whole viewport width */
+  .intro-photo { max-width: 240px; margin: 0 auto 1.15rem; }
+  .intro-photo--fallback { font-size: 2.8rem; }
   .card { grid-template-columns: 1fr; gap: 1rem; }
   .card-thumb { max-width: 340px; }
   .news-list li { flex-direction: column; gap: .2rem; }
