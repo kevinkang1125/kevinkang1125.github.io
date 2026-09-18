@@ -114,7 +114,6 @@ h3 { font-size: 1rem; font-weight: 600; margin: 1.8rem 0 .7rem; }
 section > h3:first-of-type { margin-top: 0; }
 
 .section-note { color: var(--text-mute); font-size: .85rem; margin: -.9rem 0 1.3rem; }
-.muted { color: var(--text-soft); }
 
 /* ── Hero ───────────────────────────────────────────────────────────────── */
 .hero {
@@ -262,17 +261,15 @@ h1 .nick { color: var(--text-mute); font-weight: 400; }
 .card-authors { margin: 0 0 .2rem; font-size: .88rem; color: var(--text-soft); }
 .card-authors strong { color: var(--text); }
 .card-venue { margin: 0; font-size: .85rem; color: var(--text-mute); }
-.card-blurb { margin: .6rem 0 0; font-size: .88rem; color: var(--text-soft); }
+.card-blurb { margin: .7rem 0 0; font-size: .88rem; color: var(--text-soft); }
 
-.card-meta { margin: 0 0 .6rem; font-size: .85rem; color: var(--text-mute); }
-.card-role { color: var(--accent); font-weight: 500; }
-.card-dates {
-  display: block; margin-top: .1rem;
-  font-size: .8rem; font-variant-numeric: tabular-nums;
+.card-meta {
+  margin: .25rem 0 0; font-size: .82rem; color: var(--text-mute);
+  font-variant-numeric: tabular-nums;
 }
 .dot { margin: 0 .35rem; color: var(--text-mute); }
 
-.card-bullets { margin: 0; padding-left: 1.1rem; }
+.card-bullets { margin: .7rem 0 0; padding-left: 1.1rem; }
 .card-bullets li { font-size: .89rem; color: var(--text-soft); margin-bottom: .32rem; }
 .card-bullets li::marker { color: var(--text-mute); }
 .card-bullets strong { color: var(--text); }
@@ -284,20 +281,6 @@ h1 .nick { color: var(--text-mute); font-weight: 400; }
   background: var(--bg-soft); border: 1px solid var(--line);
   color: var(--text-soft); font-size: .75rem; font-weight: 500;
 }
-
-/* ── Simple rows (experience, awards, talks) ────────────────────────────── */
-.plain-list { list-style: none; margin: 0; padding: 0; }
-.row {
-  display: flex; gap: 1rem; align-items: baseline;
-  padding: .7rem 0; border-bottom: 1px dashed var(--line); font-size: .93rem;
-}
-.row:last-child { border-bottom: 0; }
-.row--stack { align-items: flex-start; }
-.row-date {
-  margin-left: auto; flex-shrink: 0; color: var(--text-mute);
-  font-size: .82rem; font-variant-numeric: tabular-nums; white-space: nowrap;
-}
-.row .sub { margin: .3rem 0 0; font-size: .86rem; color: var(--text-mute); }
 
 /* ── Skills ─────────────────────────────────────────────────────────────── */
 .skills { display: flex; flex-direction: column; gap: 1.4rem; }
@@ -324,8 +307,6 @@ footer p { margin: 0 0 .5rem; }
   .card-thumb { max-width: 340px; }
   .news-list li { flex-direction: column; gap: .2rem; }
   .news-date { flex: none; }
-  .row { flex-wrap: wrap; }
-  .row-date { margin-left: 0; width: 100%; }
   .edu-dates { margin-left: 0; width: 100%; }
 }
 

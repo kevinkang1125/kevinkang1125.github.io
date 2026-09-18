@@ -126,19 +126,32 @@ const DATA = {
     }
   ],
 
-  /* ─── 5. PUBLICATIONS ────────────────────────────────────────────────
-     badge  : the pill shown on the thumbnail (venue + year)
-     img    : 16:10-ish teaser image, ~600x375px looks great
-     links  : [label, url] pairs — delete any you don't have yet
+  /* ─── 5. RESEARCH  (publications and projects, merged) ──────────────
+     One entry per piece of work. Papers carry authors/venue; project-only
+     entries just omit them and rely on `meta`.
+
+       badge    pill on the thumbnail — venue + year, or a status
+       highlight  true = accent-colored featured card
+       meta     where the work was done: role, group, dates
+       bullets  what you actually did
+       tags     keywords shown as pills
+       links    [label, url] pairs — omit any you don't have yet
      ─────────────────────────────────────────────────────────────────── */
-  publications: [
+  research: [
     {
       title:"Drive2Survive: A Benchmark for End-to-End Autonomous Driving Policies",
       authors:"<strong>Q. Kang</strong>*, et al.",
       venue:"Manuscript in preparation",
       badge:"In prep", highlight:true,
       img:"assets/pubs/drive2survive.svg",
+      meta:"Project lead &middot; Northeastern University / MIT &middot; 2025 &ndash; Present",
       blurb:"A unified evaluation protocol, task suite and metric set for comparing learned end-to-end driving policies on common ground.",
+      bullets:[
+        "Leading the design of a benchmark for evaluating end-to-end autonomous driving policies.",
+        "Defining the evaluation protocol, task suite and metrics used to compare learned policies on common ground.",
+        "Benchmarking representative end-to-end driving baselines under a unified evaluation setup."
+      ],
+      tags:["End-to-end AD","Benchmarking","Policy evaluation","Closed-loop simulation"],
       links:[]
     },
     {
@@ -147,7 +160,15 @@ const DATA = {
       venue:"Submitted to <em>IEEE Robotics and Automation Letters</em>",
       badge:"Under review", highlight:true,
       img:"assets/pubs/hicola.svg",
+      meta:"Graduate Research Assistant &middot; NSF NAIRR Principal Investigator &middot; MIT Transit Lab &middot; Sep 2024 &ndash; Jan 2026",
       blurb:"A confidence-integrated safe RL framework giving formal performance guarantees and monotonic policy improvement from logged data.",
+      bullets:[
+        "Developed a safe RL training strategy: a confidence-integrated framework giving formal performance guarantees and monotonic policy improvement for driving and routing agents.",
+        "Designed a high-confidence lower bound approximation (Hi-CoLA) network as a surrogate reward model, enabling safe offline policy optimization from logged data without environment interaction.",
+        "Applied the framework to dynamic vehicle routing and fleet control, raising worst-case policy performance and mitigating the long-tail risk that dominates safety-critical autonomy.",
+        "Secured and led an <strong>NSF NAIRR Pilot</strong> award as Principal Investigator, running large-scale training on 4,000 GPU hours of the PSC Bridges-2 NVIDIA cluster."
+      ],
+      tags:["Safe RL","Offline RL","High-confidence policy improvement","Performance guarantees","Large-scale GPU training"],
       links:[]
     },
     {
@@ -156,7 +177,14 @@ const DATA = {
       venue:"<em>IEEE Transactions on Robotics</em>, vol. 41, pp. 3385&ndash;3401, 2025",
       badge:"T-RO 2025",
       img:"assets/pubs/rfac.svg",
+      meta:"M.Eng. research &middot; A*STAR &amp; NUS Control and Mechatronics Lab &middot; Nov 2022 &ndash; Jun 2023",
       blurb:"A value-function-factorization paradigm for multi-robot efficient search that stays robust when individual agents can fail.",
+      bullets:[
+        "Proposed R-FAC, a resilient value-function-factorization paradigm robust to individual agent failure probabilities.",
+        "Targets the multi-robot efficient search (MuRES) problem under fault-prone team conditions.",
+        "One of two journal papers produced by my M.Eng. work on multi-agent coordination and fault-tolerant autonomy."
+      ],
+      tags:["Multi-agent RL","Value factorization","Fault tolerance","Robotics"],
       links:[]   // TODO: paste real URL, e.g. links:[["IEEE","https://ieeexplore.ieee.org/document/..."],["PDF","..."]]
     },
     {
@@ -165,7 +193,15 @@ const DATA = {
       venue:"<em>IEEE 27th International Conference on Intelligent Transportation Systems (ITSC)</em>, Edmonton, Canada, 2024, pp. 3147&ndash;3153",
       badge:"ITSC 2024",
       img:"assets/pubs/tractor-trailer.svg",
+      meta:"AI Function Engineer Intern &middot; Continental (now AUMOVIO), Singapore &middot; May 2022 &ndash; Apr 2023",
       blurb:"A mid-to-end deep RL policy unifying trajectory generation and tracking control for articulated vehicles under edge-case conditions.",
+      bullets:[
+        "Developed a mid-to-end deep RL driving policy for an articulated tractor-trailer, unifying trajectory generation and tracking control in a single hybrid learned architecture.",
+        "Achieved safety-critical tracking control under extreme and edge-case driving conditions.",
+        "Built a custom 3D physics simulation environment (PyBullet / OpenAI Gym) for closed-loop driving policy training and evaluation.",
+        "Delivered one first-author IEEE ITSC paper and one <strong>pending US patent</strong> on vehicle motion control."
+      ],
+      tags:["Mid-to-end driving","Deep RL","Articulated vehicle control","PyBullet","US patent pending"],
       links:[]   // TODO: paste real URL
     },
     {
@@ -174,134 +210,47 @@ const DATA = {
       venue:"<em>IEEE Robotics and Automation Letters</em>, vol. 8, no. 9, pp. 5712&ndash;5719, 2023",
       badge:"RA-L 2023",
       img:"assets/pubs/em-patroller.svg",
+      meta:"M.Eng. research &middot; A*STAR &amp; NUS Control and Mechatronics Lab &middot; Nov 2022 &ndash; Jun 2023",
       blurb:"An entropy-maximization patrolling algorithm using steady-state distribution approximation to produce unpredictable yet efficient routes.",
+      bullets:[
+        "Designed an entropy-maximization algorithm with steady-state distribution approximation for the multi-robot patrolling (MuRP) problem.",
+        "Presented at IEEE ICRA 2024, Yokohama, Japan."
+      ],
+      tags:["Multi-robot patrolling","Entropy maximization","Robotics"],
       links:[]   // TODO: paste real URL
-    }
-  ],
-  pubNote:"* corresponding author &nbsp;&middot;&nbsp; &dagger; equal contribution",
-
-  /* ─── 6. PROJECTS ────────────────────────────────────────────────── */
-  projects: [
-    {
-      title:"Drive2Survive &mdash; Benchmarking End-to-End Driving Policies",
-      role:"Project Lead &middot; first author", org:"Northeastern University / MIT",
-      dates:"2025 &ndash; Present",
-      img:"assets/projects/drive2survive.svg",
-      bullets:[
-        "Leading the design of a benchmark for evaluating end-to-end autonomous driving policies.",
-        "Defining the evaluation protocol, task suite and metrics used to compare learned policies on common ground.",
-        "Benchmarking representative end-to-end driving baselines under a unified evaluation setup."
-      ],
-      tags:["End-to-end AD","Benchmarking","Closed-loop simulation"]
     },
     {
-      title:"Mid-to-End Deep RL Trajectory Generation &amp; Control for Articulated Vehicles",
-      role:"AI Function Engineer Intern", org:"Continental (now AUMOVIO), Singapore",
-      dates:"May 2022 &ndash; Apr 2023",
-      img:"assets/projects/tractor-trailer.svg",
-      bullets:[
-        "Developed a mid-to-end deep RL driving policy for an articulated tractor-trailer, unifying trajectory generation and tracking control in a single hybrid learned architecture.",
-        "Achieved safety-critical tracking control under extreme and edge-case driving conditions.",
-        "Built a custom 3D physics simulation environment (PyBullet / OpenAI Gym) for closed-loop policy training and evaluation.",
-        "Delivered one first-author IEEE ITSC paper and one pending US patent on vehicle motion control."
-      ],
-      tags:["Deep RL","Vehicle control","PyBullet","Patent"]
-    },
-    {
-      title:"Safe Reinforcement Learning with High-Confidence Performance Guarantees",
-      role:"Graduate Research Assistant &middot; NSF NAIRR PI", org:"MIT Transit Lab, United States",
-      dates:"Sep 2024 &ndash; Jan 2026",
-      img:"assets/projects/hicola.svg",
-      bullets:[
-        "Developed a safe RL training strategy: a confidence-integrated framework giving formal performance guarantees and monotonic policy improvement for driving and routing agents.",
-        "Designed a high-confidence lower bound approximation (Hi-CoLA) network as a surrogate reward model, enabling safe offline policy optimization from logged data without environment interaction.",
-        "Applied the framework to dynamic vehicle routing and fleet control, raising worst-case policy performance and mitigating the long-tail risk that dominates safety-critical autonomy.",
-        "Secured and led an NSF NAIRR Pilot award as PI, running large-scale training on 4,000 GPU hours of the PSC Bridges-2 NVIDIA cluster."
-      ],
-      tags:["Safe RL","Offline RL","Policy guarantees","Large-scale GPU training"]
-    },
-    {
-      title:"Large Fleet Rebalancing &amp; Human Driver Behavior Modeling",
-      role:"Research Engineer", org:"AUMOVIO&ndash;NTU Corp Lab, Singapore",
-      dates:"Aug 2023 &ndash; Aug 2024",
+      title:"Large Fleet Rebalancing and Human Driver Behavior Modeling",
+      badge:"Industry R&amp;D",
       img:"assets/projects/fleet.svg",
+      meta:"Research Engineer &middot; AUMOVIO&ndash;NTU Corp Lab, Singapore &middot; Aug 2023 &ndash; Aug 2024",
+      blurb:"Optimization plus multi-agent RL for coordinating a large autonomous fleet, aligned to how human drivers actually behave.",
       bullets:[
         "Developed an optimization-based solution for large-scale autonomous fleet rebalancing.",
         "Extended the rebalancing model with multi-agent reinforcement learning for cooperative multi-vehicle coordination.",
         "Modeled human driver behavior during vacant travel using machine learning on ride-hail operational data.",
         "Optimized the rebalancing strategy through agent-level preference matching, aligning dispatch decisions with learned driver behavior."
       ],
-      tags:["MARL","Fleet coordination","Behavior modeling"]
+      tags:["Multi-agent RL","Fleet coordination","Driver behavior modeling","Optimization"],
+      links:[]
     },
     {
       title:"Full-Stack Autonomous Driving System &mdash; Formula Student Autonomous",
-      role:"Leader &amp; Chief Designer, team of 60+ students", org:"HUST, Wuhan, China",
-      dates:"Jan 2019 &ndash; Jan 2020",
+      badge:"National Award",
       img:"assets/projects/fsac.svg",
+      meta:"Leader &amp; Chief Designer, team of 60+ students &middot; HUST, Wuhan, China &middot; Jan 2019 &ndash; Jan 2020",
+      blurb:"A complete autonomous stack on a real race car — perception through planning to control — built and raced by a student team.",
       bullets:[
         "Won a <strong>National Award</strong> at Formula Student Autonomous China (FSAC) with a fully autonomous race car.",
         "Designed the architecture of a complete autonomous driving stack: LiDAR-based point cloud processing for lane/track detection, heuristic trajectory planning, and PID-based motion stabilization."
       ],
-      tags:["LiDAR perception","Motion planning","Real vehicle","National award"]
-    },
-    {
-      title:"Coordination and Optimization Strategies in Multiagent Systems",
-      role:"Research Student (M.Eng. final year project)", org:"A*STAR, Singapore",
-      dates:"Nov 2022 &ndash; Jun 2023",
-      img:"assets/projects/multiagent.svg",
-      bullets:[
-        "Developed efficient algorithms for two multi-agent coordination problems: multi-robot patrolling (MuRP) and multi-robot efficient search (MuRES).",
-        "Designed an entropy-maximization algorithm with steady-state distribution approximation for multi-robot patrolling (IEEE RA-L).",
-        "Proposed R-FAC, a resilient value-function-factorization paradigm robust to individual agent failure probabilities (IEEE T-RO).",
-        "Authored two journal papers on multi-agent coordination and fault-tolerant autonomy."
-      ],
-      tags:["Multi-agent RL","Robotics","2 journal papers"]
+      tags:["LiDAR perception","Point cloud processing","Motion planning","Real vehicle","Full AV stack"],
+      links:[]
     }
   ],
+  researchNote:"* corresponding author &nbsp;&middot;&nbsp; &dagger; equal contribution &nbsp;&middot;&nbsp; full record in my <a href=\"assets/Qi_Kang_CV.pdf\">CV</a>",
 
-  /* ─── 7. EXPERIENCE ──────────────────────────────────────────────── */
-  experience: [
-    { role:"Research Engineer", org:"Continental&ndash;NTU Corp Lab (now AUMOVIO)",
-      location:"Singapore", dates:"Aug 2023 &ndash; Aug 2024" },
-    { role:"Research Assistant", org:"Agency for Science, Technology and Research (A*STAR)",
-      location:"Singapore", dates:"Nov 2022 &ndash; Jun 2023" },
-    { role:"AI Function Engineer Intern", org:"Continental Automotive (now AUMOVIO)",
-      location:"Singapore", dates:"May 2022 &ndash; Apr 2023" }
-  ],
-
-  /* ─── 8. AWARDS, FUNDING & PATENTS ───────────────────────────────── */
-  funding: [
-    { title:"NSF National AI Research Resource (NAIRR) Pilot Program",
-      role:"Principal Investigator", dates:"Aug 2025 &ndash; Nov 2025",
-      detail:`Project: <em>High-Confidence Lower Bound Approximation Based Performance Guaranteed
-              Reinforcement Learning</em>. Allocated 4,000 GPU hours on the PSC Bridges-2 NVIDIA
-              GPU cluster.` }
-  ],
-  patents: [
-    { text:`Q. Kang, A. Hartmannsgruber, S.-H. Tan, X. Zhang, &ldquo;Method and Data Processing Device
-            for Controlling Motion of a Vehicle,&rdquo; pending US patent application.` }
-  ],
-  awards: [
-    { text:`<strong>National Award</strong> &mdash; &ldquo;Aichi Cup&rdquo; Formula Student Autonomous
-            China (FSAC)`, date:"Nov 2019" },
-    { text:`<strong>National Award of Excellence</strong> &mdash; Formula Student Combustion China
-            (FSCC)`, date:"Oct 2018" }
-  ],
-
-  /* ─── 9. TALKS ───────────────────────────────────────────────────── */
-  talks: [
-    { title:"Deep Reinforcement Learning Based Tractor-Trailer Tracking Control",
-      venue:"27th IEEE Intelligent Transportation Systems Conference (ITSC)",
-      location:"Edmonton, Canada", date:"2024" },
-    { title:"EM-Patroller: Entropy Maximized Multi-Robot Patrolling With Steady State Distribution Approximation",
-      venue:"IEEE International Conference on Robotics and Automation (ICRA)",
-      location:"Yokohama, Japan", date:"2024" },
-    { title:"Coordination and Optimization Strategies in Multiagent Systems",
-      venue:"NUS College of Design and Engineering Graduate Seminar",
-      location:"Singapore", date:"2023" }
-  ],
-
-  /* ─── 10. SKILLS ─────────────────────────────────────────────────── */
+  /* ─── 6. SKILLS ──────────────────────────────────────────────────── */
   skills: [
     { group:"Research Interests", items:["End-to-end &amp; learning-based autonomous driving","Policy optimization and RL training strategies","Safe and trustworthy autonomy","Sequential decision-making under uncertainty","Vision-language-action (VLA) and foundation models for driving"] },
     { group:"Autonomous Driving", items:["End-to-end / mid-to-end driving policies","Safety-critical vehicle control","AV benchmark design and policy evaluation","LiDAR perception and point cloud processing","Motion planning","Vehicle dynamics","Closed-loop simulation","Fleet-level coordination"] },
@@ -347,10 +296,7 @@ const DATA = {
       <a href="#about">About</a>
       <a href="#news">News</a>
       <a href="#education">Education</a>
-      <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#awards">Awards</a>
+      <a href="#research">Research</a>
       <a href="#skills">Skills</a>
     </div>
     <button id="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
@@ -381,32 +327,10 @@ const DATA = {
     <div class="edu-list" id="education-list"></div>
   </section>
 
-  <section id="publications">
-    <h2>Publications</h2>
-    <p class="section-note" id="pub-note"></p>
-    <div class="cards" id="publication-list"></div>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="cards" id="project-list"></div>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <ul class="plain-list" id="experience-list"></ul>
-  </section>
-
-  <section id="awards">
-    <h2>Awards, Funding &amp; Patents</h2>
-    <h3>Funding</h3>
-    <ul class="plain-list" id="funding-list"></ul>
-    <h3>Patents</h3>
-    <ul class="plain-list" id="patent-list"></ul>
-    <h3>Honors</h3>
-    <ul class="plain-list" id="award-list"></ul>
-    <h3>Invited Talks &amp; Conference Presentations</h3>
-    <ul class="plain-list" id="talk-list"></ul>
+  <section id="research">
+    <h2>Research</h2>
+    <p class="section-note" id="research-note"></p>
+    <div class="cards" id="research-list"></div>
   </section>
 
   <section id="skills">

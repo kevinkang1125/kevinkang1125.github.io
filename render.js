@@ -78,80 +78,35 @@
       </div>
     </article>`).join(""));
 
-  /* ── Publications ────────────────────────────────────────────────────── */
-  set("pub-note", DATA.pubNote || "");
-  set("publication-list", DATA.publications.map((pub) => `
-    <article class="card${pub.highlight ? " card--featured" : ""}">
+  /* ── Research: publications and projects in one list ──────────────────
+     Papers render authors + venue; project-only entries skip both and lean
+     on `meta`. Everything else (blurb, bullets, tags, links) is shared.
+     ─────────────────────────────────────────────────────────────────────── */
+  set("research-note", DATA.researchNote || "");
+  set("research-list", DATA.research.map((r) => `
+    <article class="card${r.highlight ? " card--featured" : ""}">
       <div class="card-thumb">
-        ${pub.img ? `<img src="${pub.img}" alt="" loading="lazy">` : ""}
-        ${pub.badge ? `<span class="badge">${pub.badge}</span>` : ""}
+        ${r.img ? `<img src="${r.img}" alt="" loading="lazy">` : ""}
+        ${r.badge ? `<span class="badge">${r.badge}</span>` : ""}
       </div>
       <div class="card-body">
-        <h3 class="card-title">${pub.title}</h3>
-        <p class="card-authors">${pub.authors}</p>
-        <p class="card-venue">${pub.venue}</p>
-        ${pub.blurb ? `<p class="card-blurb">${pub.blurb}</p>` : ""}
-        ${pub.links && pub.links.length
-          ? `<div class="link-row link-row--sm">${pub.links.map(([label, href]) =>
+        <h3 class="card-title">${r.title}</h3>
+        ${r.authors ? `<p class="card-authors">${r.authors}</p>` : ""}
+        ${r.venue   ? `<p class="card-venue">${r.venue}</p>`     : ""}
+        ${r.meta    ? `<p class="card-meta">${r.meta}</p>`       : ""}
+        ${r.blurb   ? `<p class="card-blurb">${r.blurb}</p>`     : ""}
+        ${r.bullets && r.bullets.length
+          ? `<ul class="card-bullets">${r.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>`
+          : ""}
+        ${r.tags && r.tags.length
+          ? `<div class="tags">${r.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>`
+          : ""}
+        ${r.links && r.links.length
+          ? `<div class="link-row link-row--sm">${r.links.map(([label, href]) =>
               `<a class="chip chip--sm" href="${href}"${attrs(href)}>${label}</a>`).join("")}</div>`
           : ""}
       </div>
     </article>`).join(""));
-
-  /* ── Projects ────────────────────────────────────────────────────────── */
-  set("project-list", DATA.projects.map((pr) => `
-    <article class="card">
-      <div class="card-thumb">
-        ${pr.img ? `<img src="${pr.img}" alt="" loading="lazy">` : ""}
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">${pr.title}</h3>
-        <p class="card-meta">
-          <span class="card-role">${pr.role}</span>
-          <span class="dot">&middot;</span>${pr.org}
-          <span class="card-dates">${pr.dates}</span>
-        </p>
-        <ul class="card-bullets">${pr.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>
-        ${pr.tags && pr.tags.length
-          ? `<div class="tags">${pr.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>`
-          : ""}
-      </div>
-    </article>`).join(""));
-
-  /* ── Experience ──────────────────────────────────────────────────────── */
-  set("experience-list", DATA.experience.map((x) => `
-    <li class="row">
-      <div>
-        <strong>${x.role}</strong><br>
-        <span class="muted">${x.org}${x.location ? ` &middot; ${x.location}` : ""}</span>
-      </div>
-      <span class="row-date">${x.dates}</span>
-    </li>`).join(""));
-
-  /* ── Awards / funding / patents / talks ──────────────────────────────── */
-  set("funding-list", DATA.funding.map((f) => `
-    <li class="row row--stack">
-      <div>
-        <strong>${f.title}</strong><br>
-        <span class="muted">${f.role}</span>
-        <p class="sub">${f.detail}</p>
-      </div>
-      <span class="row-date">${f.dates}</span>
-    </li>`).join(""));
-
-  set("patent-list", DATA.patents.map((pt) => `<li class="row"><div>${pt.text}</div></li>`).join(""));
-
-  set("award-list", DATA.awards.map((a) => `
-    <li class="row"><div>${a.text}</div><span class="row-date">${a.date}</span></li>`).join(""));
-
-  set("talk-list", DATA.talks.map((t) => `
-    <li class="row row--stack">
-      <div>
-        <em>&ldquo;${t.title}&rdquo;</em><br>
-        <span class="muted">${t.venue} &middot; ${t.location}</span>
-      </div>
-      <span class="row-date">${t.date}</span>
-    </li>`).join(""));
 
   /* ── Skills ──────────────────────────────────────────────────────────── */
   set("skill-list", DATA.skills.map((s) => `

@@ -19,33 +19,40 @@ Open `index.html`, scroll to the big `const DATA = { ... }` block. Every section
 page is a labelled key in there:
 
 ```
-profile      your name, photo, tagline, contact links
-about        the intro paragraphs
-news         reverse-chronological updates
-education    the standalone education timeline
-publications paper cards (thumbnail + venue badge + links)
-projects     project cards (thumbnail + bullets + tags)
-experience   work & internship rows
-funding / patents / awards / talks
-skills       tag groups
+profile    your name, photo, tagline, contact links
+about      the intro paragraphs
+news       reverse-chronological updates
+education  the education list (grad-cap icon, degree over institution)
+research   publications AND projects, merged into one list
+skills     tag groups
 ```
 
-Adding a publication = adding one object to the `publications` array:
+The site is deliberately **not** a copy of the CV — no experience, awards,
+funding, patent or talks sections. That material lives in the PDF. Anything
+worth surfacing (the NAIRR award, the pending patent) is folded into the
+bullets of the work it belongs to.
+
+Adding work = adding one object to the `research` array:
 
 ```js
 {
   title:   "Your Paper Title",
-  authors: "<strong>Q. Kang</strong>, A. Coauthor",
-  venue:   "<em>Some Conference</em>, 2026",
-  badge:   "NeurIPS 2026",          // pill shown on the thumbnail
+  authors: "<strong>Q. Kang</strong>, A. Coauthor",   // omit for project-only
+  venue:   "<em>Some Conference</em>, 2027",          // omit for project-only
+  badge:   "NeurIPS 2027",        // pill on the thumbnail
   img:     "assets/pubs/yourpaper.png",
+  meta:    "Role · Group · Dates",
   blurb:   "One sentence on what it does.",
+  bullets: ["What you actually did.", "And the next thing."],
+  tags:    ["Keyword", "Another keyword"],
   links:   [["PDF","https://..."], ["Code","https://github.com/..."]]
 }
 ```
 
-Set `highlight: true` on a paper to give it the accent-colored featured treatment.
-HTML is allowed inside any string (`<strong>`, `<em>`, `<a href>`).
+Drop `authors` and `venue` for a project with no paper — the card renders fine
+without them and leans on `meta` instead. Set `highlight: true` for the
+accent-colored featured treatment. HTML works inside any string (`<strong>`,
+`<em>`, `<a href>`).
 
 ## Preview locally
 
