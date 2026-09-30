@@ -86,6 +86,6 @@ GitHub Pages redeploys automatically, usually within a minute.
 - [ ] Add `assets/Qi_Kang_CV.pdf` so the **CV** button works.
 - [ ] Replace the placeholder Google Scholar and LinkedIn URLs in `DATA.profile.links`.
 - [ ] Paste real paper URLs into the `links: []` arrays (search for `TODO` in `index.html`).
-- [ ] Swap the generated placeholder teaser images in `assets/pubs/` and `assets/projects/`
+- [ ] Swap the generated placeholder teaser images in `assets/pubs/`
       for real figures (16:10, ~600×375 or larger).
 - [ ] Review the `news` entries — they were seeded from the CV and may need dates corrected.

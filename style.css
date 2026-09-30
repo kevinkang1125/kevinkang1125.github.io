@@ -260,7 +260,7 @@ html[data-theme="dark"] .btn-cv { color: #0e1014; }
   aspect-ratio: 16 / 10; overflow: hidden;
   border-radius: 8px; background: var(--bg-soft); border: 1px solid var(--line);
 }
-.card-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.card-thumb img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
 .badge {
   position: absolute; bottom: .45rem; left: .45rem;
   padding: .15rem .5rem; border-radius: 5px;

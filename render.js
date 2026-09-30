@@ -99,12 +99,12 @@
         ${r.bullets && r.bullets.length
           ? `<ul class="card-bullets">${r.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>`
           : ""}
-        ${r.tags && r.tags.length
-          ? `<div class="tags">${r.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>`
-          : ""}
         ${r.links && r.links.length
           ? `<div class="link-row link-row--sm">${r.links.map(([label, href]) =>
               `<a class="chip chip--sm" href="${href}"${attrs(href)}>${label}</a>`).join("")}</div>`
+          : ""}
+        ${r.tags && r.tags.length
+          ? `<div class="tags">${r.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>`
           : ""}
       </div>
     </article>`).join(""));

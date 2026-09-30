@@ -36,62 +36,60 @@ const DATA = {
     photo:   "assets/photo.jpg",
     title:   "Ph.D. Candidate, Civil &amp; Environmental Engineering",
     org:     "Northeastern University",
-    org2:    "Graduate Research Assistant, MIT JTL / Transit Lab",
+    org2:    `Graduate Research Assistant@<a href="https://www.transitlab.mit.edu/" target="_blank" rel="noopener">MIT Transit Lab</a>`,
     cv:      "assets/Qi_Kang_CV.pdf",
     /* Icon-only row under the portrait. `label` becomes the tooltip and the
        screen-reader name, so keep it accurate even though it isn't drawn. */
     links: [
       { label:"Email",          href:"mailto:kang.qi1@northeastern.edu",       icon:"mail"     },
-      { label:"Google Scholar", href:"https://scholar.google.com/",            icon:"scholar"  },
+      { label:"Google Scholar", href:"https://scholar.google.com/citations?user=FU9fC0UAAAAJ&hl=en",            icon:"scholar"  },
       { label:"GitHub",         href:"https://github.com/kevinkang1125",       icon:"github"   },
-      { label:"LinkedIn",       href:"https://www.linkedin.com/",              icon:"linkedin" },
+      { label:"LinkedIn",       href:"https://www.linkedin.com/in/qi-kang-5529b11b9/?isSelfProfile=true",              icon:"linkedin" },
       { label:"ORCID",          href:"https://orcid.org/0009-0004-1634-506X",  icon:"orcid"    }
     ]
   },
 
   /* ─── 2. ABOUT ───────────────────────────────────────────────────── */
   about: [
-    `I am an autonomous driving researcher working on <strong>end-to-end, learning-based driving
-     policies</strong>, with deep reinforcement learning as the methodological core. I am a Ph.D.
-     candidate at Northeastern University, co-advised by Prof.
-     <a href="https://coe.northeastern.edu/people/koutsopoulos-haris/">Haris N. Koutsopoulos</a> (NEU)
-     and Prof. <a href="https://dusp.mit.edu/people/jinhua-zhao">Jinhua Zhao</a> (MIT).`,
-
-
-
-    `Before my Ph.D. I spent two years on industry AV research at <strong>Continental / AUMOVIO</strong>,
-     delivering a mid-to-end deep RL controller for safety-critical articulated-vehicle control
-     (IEEE ITSC paper, pending US patent) and large-scale autonomous fleet coordination. Earlier, I
-     led the full autonomous stack &mdash; LiDAR perception, planning and control &mdash; for a
-     national-award-winning Formula Student Autonomous team.`,
+    `I am a Ph.D. candidate at Northeastern University, co-advised by Prof. <a href="https://coe.northeastern.edu/people/koutsopoulos-haris/">Haris N. Koutsopoulos</a> (NEU)
+     and Prof. <a href="https://dusp.mit.edu/people/jinhua-zhao">Jinhua Zhao</a> (MIT). My research focuses on <strong>Physical AI safety</strong>, with the goal of developing learning-based autonomous systems that can make robust and reliable decisions in safety-critical real-world environments.`,
+     `In particular, I am working on two interconnected directions: (1) <strong>End-to-End Autonomous Driving</strong>, particularly vision-language-action (VLA) models, closed-loop evaluation, and learning-based planning; (2) <strong>Reinforcement Learning</strong>, including safe RL, and high-confidence performance evaluation and improvement; Recently, I have been leading Drive2Survive, a safety benchmark for VLA-based end-to-end driving models, and developing methods for high-confidence reinforcement learning and safety-aware perception.
+     `,
+     `Before my Ph.D., I received my M.Eng. in Mechanical Engineering from the
+     <a href="https://www.nus.edu.sg/">National University of Singapore</a> with Prof.
+     <a href="https://cde.nus.edu.sg/me/staff/chew-chee-meng-2/">Chee-Meng Chew</a> and my B.Eng. in
+     Mechanical Engineering from <a href="https://english.hust.edu.cn/">Huazhong University of Science
+     and Technology</a>, where I led the full-stack development of an autonomous race car for the
+     <a href="https://formulastudent.sae-china.org/introduction.html">Formula Student Autonomous China (FSAC)</a>
+     competition. I spent time doing research at <a href="https://www.aumovio.com/en.html">Continental
+     Automotive (now AUMOVIO)</a>, <a href="https://www.ntu.edu.sg/ancl">Continental-NTU Corporate Lab</a>
+     and the <a href="https://www.a-star.edu.sg/">Agency for Science, Technology and Research (A*STAR)</a>.`
   ],
 
   /* ─── 3. NEWS  (newest first — edit freely) ──────────────────────── */
   news: [
     { date:"Aug 2025", text:`Awarded an <strong>NSF NAIRR Pilot</strong> allocation as <strong>Principal
         Investigator</strong> &mdash; 4,000 GPU hours on the PSC Bridges-2 NVIDIA cluster.` },
-    { date:"2025",     text:`<em>R-FAC: Resilient Value Function Factorization for Multi-Robot Efficient
+    { date:"May 2025",     text:`<em>R-FAC: Resilient Value Function Factorization for Multi-Robot Efficient
         Search</em> published in <strong>IEEE Transactions on Robotics</strong>.` },
     { date:"Sep 2024", text:`Presented <em>Deep Reinforcement Learning Based Tractor-Trailer Tracking
         Control</em> at <strong>IEEE ITSC 2024</strong> in Edmonton, Canada.` },
     { date:"Sep 2024", text:`Started my Ph.D. at <strong>Northeastern University</strong>, joining the
         <strong>MIT JTL / Transit Lab</strong> as a Graduate Research Assistant.` },
-    { date:"Nov 2023", text:`Completed my M.Eng. (research) at the <strong>National University of
+    { date:"Nov 2023", text:`Completed my M.Eng. at the <strong>National University of
         Singapore</strong>, Control &amp; Mechatronics Lab.` }
   ],
 
   /* ─── 4. INTERESTS + EDUCATION  (the two columns in the intro) ───── */
   interests: [
-    "End-to-end and learning-based autonomous driving",
-    "Policy optimization and RL training strategies",
-    "Safe and trustworthy autonomy",
-    "Sequential decision-making under uncertainty",
-    "Vision-language-action (VLA) and foundation models for driving"
+    "End-to-end Autonomous Driving",
+    "Reinforcement Learning",
+    "Safety for Physical AI",
   ],
 
   /* Degree, major and university only — the rest lives in the CV. */
   education: [
-    { degree:"Ph.D. Data and Systems",
+    { degree:"Ph.D. Candidate, Data and Systems",
       school:"Northeastern University" },
     { degree:"M.Eng. Mechanical Engineering",
       school:"National University of Singapore" },
@@ -111,124 +109,71 @@ const DATA = {
        links    [label, url] pairs — omit any you don't have yet
      ─────────────────────────────────────────────────────────────────── */
   research: [
-    {
-      title:"Drive2Survive: A Benchmark for End-to-End Autonomous Driving Policies",
-      authors:"<strong>Q. Kang</strong>*, et al.",
-      venue:"Manuscript in preparation",
-      badge:"In prep", highlight:true,
-      img:"assets/pubs/drive2survive.svg",
-      meta:"Project lead &middot; Northeastern University / MIT &middot; 2025 &ndash; Present",
-      blurb:"A unified evaluation protocol, task suite and metric set for comparing learned end-to-end driving policies on common ground.",
-      bullets:[
-        "Leading the design of a benchmark for evaluating end-to-end autonomous driving policies.",
-        "Defining the evaluation protocol, task suite and metrics used to compare learned policies on common ground.",
-        "Benchmarking representative end-to-end driving baselines under a unified evaluation setup."
-      ],
-      tags:["End-to-end AD","Benchmarking","Policy evaluation","Closed-loop simulation"],
-      links:[]
-    },
+    // {
+    //   title:"Drive2Survive: A Benchmark for End-to-End Autonomous Driving Models",
+    //   authors:"<strong>Q. Kang</strong>*, et al.",
+    //   // venue:"Manuscript in preparation",
+    //   // badge:"In prep", highlight:true,
+    //   img:"assets/pubs/drive2survive.svg",
+    //   tags:["Autonomous Driving","Physical AI Safety"],
+    //   links:[['Project']]
+    // },
     {
       title:"Hi-CoLA: High Confidence Lower Bound Approximation Based Reinforcement Learning for Flex-Route Transit Operation Control",
-      authors:"<strong>Q. Kang</strong>, H. Guo, H. N. Koutsopoulos*, J. Zhao",
-      venue:"Submitted to <em>IEEE Robotics and Automation Letters</em>",
-      badge:"Under review", highlight:true,
-      img:"assets/pubs/hicola.svg",
-      meta:"Graduate Research Assistant &middot; NSF NAIRR Principal Investigator &middot; MIT Transit Lab &middot; Sep 2024 &ndash; Jan 2026",
-      blurb:"A confidence-integrated safe RL framework giving formal performance guarantees and monotonic policy improvement from logged data.",
-      bullets:[
-        "Developed a safe RL training strategy: a confidence-integrated framework giving formal performance guarantees and monotonic policy improvement for driving and routing agents.",
-        "Designed a high-confidence lower bound approximation (Hi-CoLA) network as a surrogate reward model, enabling safe offline policy optimization from logged data without environment interaction.",
-        "Applied the framework to dynamic vehicle routing and fleet control, raising worst-case policy performance and mitigating the long-tail risk that dominates safety-critical autonomy.",
-        "Secured and led an <strong>NSF NAIRR Pilot</strong> award as Principal Investigator, running large-scale training on 4,000 GPU hours of the PSC Bridges-2 NVIDIA cluster."
-      ],
-      tags:["Safe RL","Offline RL","High-confidence policy improvement","Performance guarantees","Large-scale GPU training"],
-      links:[]
+      authors:"<strong>Qi Kang</strong>, Haris N. Koutsopoulos, Hongliang Guo, Jinhua Zhao",
+      venue:"<em>Under Review</em>",
+      badge:"Under review", highlight:false,
+      img:"assets/pubs/hicola.png",
+      tags:["Reinforcement Learning","Physical AI Safety"],
+      links:[['Openreview','https://openreview.net/pdf?id=K7ivxbDOF2']]
+    },
+    {
+      title:"VeriFuse: Bounded Vision&ndash;Language Arbitration and Reason-Guided Refinement for Cooperative 3D Perception",
+      authors:"Hongyi Lin, Yiyao Liu, <strong>Qi Kang*</strong>, Heye Huang, Yang Liu, Haris N. Koutsopoulos, Jinhua Zhao",
+      venue:"<em>Preprint2026</em>",
+      badge:"Under review",
+      img:"assets/pubs/verifuse.png",
+      tags:["Autonomous Driving","Vision-Language Models"],
+      links:[['arXiv','https://arxiv.org/pdf/2609.21323']]
     },
     {
       title:"R-FAC: Resilient Value Function Factorization for Multi-Robot Efficient Search with Individual Failure Probabilities",
-      authors:"H. Guo*&dagger;, <strong>Q. Kang</strong>&dagger;, W.-Y. Yau, C.-M. Chew, D. Rus",
-      venue:"<em>IEEE Transactions on Robotics</em>, vol. 41, pp. 3385&ndash;3401, 2025",
+      authors:"Hongliang Guo*&dagger;, <strong>Qi Kang</strong>&dagger;, Wei-Yun Yau, Chee-Meng Chew, Daniela Rus",
+      venue:"<em>IEEE Transactions on Robotics,2025</em>",
       badge:"T-RO 2025",
-      img:"assets/pubs/rfac.svg",
-      meta:"M.Eng. research &middot; A*STAR &amp; NUS Control and Mechatronics Lab &middot; Nov 2022 &ndash; Jun 2023",
-      blurb:"A value-function-factorization paradigm for multi-robot efficient search that stays robust when individual agents can fail.",
-      bullets:[
-        "Proposed R-FAC, a resilient value-function-factorization paradigm robust to individual agent failure probabilities.",
-        "Targets the multi-robot efficient search (MuRES) problem under fault-prone team conditions.",
-        "One of two journal papers produced by my M.Eng. work on multi-agent coordination and fault-tolerant autonomy."
-      ],
-      tags:["Multi-agent RL","Value factorization","Fault tolerance","Robotics"],
-      links:[]   // TODO: paste real URL, e.g. links:[["IEEE","https://ieeexplore.ieee.org/document/..."],["PDF","..."]]
+      img:"assets/pubs/rfac.png",
+      links:[['HTML','https://ieeexplore.ieee.org/abstract/document/10989574'],['Code','https://github.com/kevinkang1125/r-fac']],
+      tags:["Multi-agent System","Reinforcement Learning","Physical AI Safety"]
+        // TODO: paste real URL, e.g. links:[["IEEE","https://ieeexplore.ieee.org/document/..."],["PDF","..."]]
     },
     {
       title:"Deep Reinforcement Learning Based Tractor-Trailer Tracking Control",
-      authors:"<strong>Q. Kang</strong>*, A. Hartmannsgruber, S.-H. Tan, X. Zhang, C.-M. Chew",
-      venue:"<em>IEEE 27th International Conference on Intelligent Transportation Systems (ITSC)</em>, Edmonton, Canada, 2024, pp. 3147&ndash;3153",
+      authors:"<strong>Qi Kang</strong>*, Andreas Hartmannsgruber, Sze-Hui Tan, Xian Zhang, Chee-Meng Chew",
+      venue:"<em>IEEE 27th International Conference on Intelligent Transportation Systems (ITSC), 2024</em>",
       badge:"ITSC 2024",
-      img:"assets/pubs/tractor-trailer.svg",
-      meta:"AI Function Engineer Intern &middot; Continental (now AUMOVIO), Singapore &middot; May 2022 &ndash; Apr 2023",
-      blurb:"A mid-to-end deep RL policy unifying trajectory generation and tracking control for articulated vehicles under edge-case conditions.",
-      bullets:[
-        "Developed a mid-to-end deep RL driving policy for an articulated tractor-trailer, unifying trajectory generation and tracking control in a single hybrid learned architecture.",
-        "Achieved safety-critical tracking control under extreme and edge-case driving conditions.",
-        "Built a custom 3D physics simulation environment (PyBullet / OpenAI Gym) for closed-loop driving policy training and evaluation.",
-        "Delivered one first-author IEEE ITSC paper and one <strong>pending US patent</strong> on vehicle motion control."
-      ],
-      tags:["Mid-to-end driving","Deep RL","Articulated vehicle control","PyBullet","US patent pending"],
-      links:[]   // TODO: paste real URL
+      img:"assets/pubs/tractor-trailer.png",
+      links:[['HTML','https://ieeexplore.ieee.org/abstract/document/10919887']],
+      tags:["Autonomous Driving","Reinforcement Learning"]
+         // TODO: paste real URL
     },
     {
       title:"EM-Patroller: Entropy Maximized Multi-Robot Patrolling With Steady State Distribution Approximation",
-      authors:"H. Guo*, <strong>Q. Kang</strong>, W.-Y. Yau, M. H. Ang, D. Rus",
-      venue:"<em>IEEE Robotics and Automation Letters</em>, vol. 8, no. 9, pp. 5712&ndash;5719, 2023",
+      authors:"Hongliang Guo*, <strong>Q. Kang</strong>, Wei-Yun Yau, Marcelo H. Ang Jr, Daniela Rus",
+      venue:"<em>IEEE Robotics and Automation Letters, 2023</em>",
       badge:"RA-L 2023",
-      img:"assets/pubs/em-patroller.svg",
-      meta:"M.Eng. research &middot; A*STAR &amp; NUS Control and Mechatronics Lab &middot; Nov 2022 &ndash; Jun 2023",
-      blurb:"An entropy-maximization patrolling algorithm using steady-state distribution approximation to produce unpredictable yet efficient routes.",
-      bullets:[
-        "Designed an entropy-maximization algorithm with steady-state distribution approximation for the multi-robot patrolling (MuRP) problem.",
-        "Presented at IEEE ICRA 2024, Yokohama, Japan."
-      ],
-      tags:["Multi-robot patrolling","Entropy maximization","Robotics"],
-      links:[]   // TODO: paste real URL
-    },
-    {
-      title:"Large Fleet Rebalancing and Human Driver Behavior Modeling",
-      badge:"Industry R&amp;D",
-      img:"assets/projects/fleet.svg",
-      meta:"Research Engineer &middot; AUMOVIO&ndash;NTU Corp Lab, Singapore &middot; Aug 2023 &ndash; Aug 2024",
-      blurb:"Optimization plus multi-agent RL for coordinating a large autonomous fleet, aligned to how human drivers actually behave.",
-      bullets:[
-        "Developed an optimization-based solution for large-scale autonomous fleet rebalancing.",
-        "Extended the rebalancing model with multi-agent reinforcement learning for cooperative multi-vehicle coordination.",
-        "Modeled human driver behavior during vacant travel using machine learning on ride-hail operational data.",
-        "Optimized the rebalancing strategy through agent-level preference matching, aligning dispatch decisions with learned driver behavior."
-      ],
-      tags:["Multi-agent RL","Fleet coordination","Driver behavior modeling","Optimization"],
-      links:[]
-    },
-    {
-      title:"Full-Stack Autonomous Driving System &mdash; Formula Student Autonomous",
-      badge:"National Award",
-      img:"assets/projects/fsac.svg",
-      meta:"Leader &amp; Chief Designer, team of 60+ students &middot; HUST, Wuhan, China &middot; Jan 2019 &ndash; Jan 2020",
-      blurb:"A complete autonomous stack on a real race car — perception through planning to control — built and raced by a student team.",
-      bullets:[
-        "Won a <strong>National Award</strong> at Formula Student Autonomous China (FSAC) with a fully autonomous race car.",
-        "Designed the architecture of a complete autonomous driving stack: LiDAR-based point cloud processing for lane/track detection, heuristic trajectory planning, and PID-based motion stabilization."
-      ],
-      tags:["LiDAR perception","Point cloud processing","Motion planning","Real vehicle","Full AV stack"],
-      links:[]
+      img:"assets/pubs/em-patroller.jpg",
+      links:[['HTML','https://ieeexplore.ieee.org/abstract/document/10197571'],['Code','https://github.com/kevinkang1125/EM-Patroller']],
+      tags:["Multi-agent System","Optimization"],
+        // TODO: paste real URL
     }
   ],
-  researchNote:"* corresponding author &nbsp;&middot;&nbsp; &dagger; equal contribution &nbsp;&middot;&nbsp; full record in my <a href=\"assets/Qi_Kang_CV.pdf\">CV</a>",
+  researchNote:"* corresponding author &nbsp;&middot;&nbsp; &dagger; equal contribution &nbsp;&middot;&nbsp",
 
   /* ─── 6. SKILLS ──────────────────────────────────────────────────── */
   skills: [
-    { group:"Autonomous Driving", items:["End-to-end / mid-to-end driving policies","Safety-critical vehicle control","AV benchmark design and policy evaluation","LiDAR perception and point cloud processing","Motion planning","Vehicle dynamics","Closed-loop simulation","Fleet-level coordination"] },
-    { group:"Machine Learning", items:["Deep reinforcement learning","Safe RL (high-confidence policy improvement, offline RL)","Multi-agent RL","Driver behavior modeling","VLA driving baseline reproduction","LLM post-training","Large-scale GPU cluster training"] },
-    { group:"Programming &amp; Tools", items:["Python","C++","PyTorch","Hugging Face Transformers","OpenAI Gym","PyBullet","Kubeflow","Git"] },
-    { group:"Outside research", items:["Scuba diving","Rock climbing","Golf","Tennis","Squash"] }
+    { group:"Autonomous Driving", items:["End-to-end trajectory planning","AV benchmark design and policy evaluation","LiDAR perception and point cloud processing","Motion planning","Vehicle dynamics","Closed-loop simulation"] },
+    { group:"Machine Learning", items:["Deep reinforcement learning","Multi-agent RL","Driver behavior modeling","VLA driving baseline reproduction","LLM post-training","Large-scale GPU cluster training"] },
+    { group:"Programming &amp; Tools", items:["Python","C++","PyTorch","PyBullet","Kubeflow","Git"] }
   ],
 
   footerNote:"Built as a single static page &middot; hosted on GitHub Pages"
