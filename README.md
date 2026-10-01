@@ -1,7 +1,6 @@
 # kevinkang1125.github.io
 
-Personal academic homepage for **Qi Kang (Kevin)** — a single static page, no build step.
-Live at **https://kevinkang1125.github.io**
+Homepage for **Qi Kang (Kevin)** Live at **https://kevinkang1125.github.io**
 
 ## Files
 
@@ -55,37 +54,4 @@ Adding work = adding one object to the `research` array:
 }
 ```
 
-Drop `authors` and `venue` for a project with no paper — the card renders fine
-without them and leans on `meta` instead. Set `highlight: true` for the
-accent-colored featured treatment. HTML works inside any string (`<strong>`,
-`<em>`, `<a href>`).
 
-## Preview locally
-
-```bash
-python3 -m http.server 8000
-```
-
-then open <http://localhost:8000>. Hard-refresh (Cmd-Shift-R) after edits.
-
-Opening `index.html` directly as a `file://` URL also works.
-
-## Publish
-
-```bash
-git add -A
-git commit -m "Update homepage"
-git push
-```
-
-GitHub Pages redeploys automatically, usually within a minute.
-
-## TODO before going live
-
-- [x] ~~Add `assets/photo.jpg`~~ — done (cropped from `IMG_8145.JPG`, 600×600).
-- [ ] Add `assets/Qi_Kang_CV.pdf` so the **CV** button works.
-- [ ] Replace the placeholder Google Scholar and LinkedIn URLs in `DATA.profile.links`.
-- [ ] Paste real paper URLs into the `links: []` arrays (search for `TODO` in `index.html`).
-- [ ] Swap the generated placeholder teaser images in `assets/pubs/`
-      for real figures (16:10, ~600×375 or larger).
-- [ ] Review the `news` entries — they were seeded from the CV and may need dates corrected.
